@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Calendrier prévisionnel 2026-2027 des compétitions de la ligue de tir Nord/Pas-de-Calais, filtrable par catégorie, niveau et discipline.">
+<meta name="description" content="Calendrier prévisionnel 2026-2027 des compétitions de la ligue de tir Nord/Pas-de-Calais, filtrable par catégorie, type d’épreuve et discipline.">
 <meta name="robots" content="noindex">
 <title>Compétitions de la ligue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,15 +80,15 @@ h1 {
   border-bottom: 1px solid var(--border);
   display: grid; gap: 10px;
 }
-.frow { display: flex; gap: 8px; align-items: center; min-width: 0; }
+.frow { display: flex; gap: 8px; align-items: flex-start; min-width: 0; }
 .flabel {
-  flex: none; width: 82px; margin: 0; font: 700 12px/1.3 var(--font-body);
+  flex: none; width: 82px; margin: 0; padding-top: 11px; font: 700 12px/1.3 var(--font-body);
   text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
 }
 .panel { display: grid; gap: 10px; }
 .panel-head, .panel-foot, .fbtn { display: none; }
 .bar { display: flex; gap: 8px; }
-.checks { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.checks { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; min-height: 40px; }
 .active { display: none; flex-wrap: wrap; gap: 6px; }
 .tag {
   display: inline-flex; align-items: center; gap: 6px; font: 500 13px/1 var(--font-body);
@@ -97,8 +97,7 @@ h1 {
 }
 .tag span { color: var(--muted); font-size: 12px; }
 .tag:hover span { color: var(--text); }
-.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-block: 2px; min-width: 0; }
-.chips::-webkit-scrollbar { display: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding-block: 2px; min-width: 0; }
 .chip {
   flex: none; font: 500 14px/1 var(--font-body); color: var(--text);
   background: var(--surface); border: 1px solid var(--border-strong);
@@ -201,10 +200,10 @@ dd { margin: 0; color: var(--text-2); }
   .panel-head h2 { font: 600 22px/1.2 var(--font-heading); margin: 0; }
   .close { font-size: 20px; color: var(--text); background: none; border: 0; width: 44px; height: 44px; cursor: pointer; }
   .panel .frow { flex-direction: column; align-items: stretch; gap: 10px; padding-block: 18px; border-bottom: 1px solid var(--border); }
-  .panel .flabel { width: auto; font-size: 13px; color: var(--text-2); }
+  .panel .flabel { width: auto; padding-top: 0; font-size: 13px; color: var(--text-2); }
   .chips { flex-wrap: wrap; overflow-x: visible; gap: 8px; }
   .chip { min-height: 40px; font-size: 15px; }
-  .checks { flex-direction: column; gap: 14px; }
+  .checks { flex-direction: column; align-items: flex-start; gap: 14px; min-height: 0; }
   .check { font-size: 15px; color: var(--text); }
   .panel-foot {
     display: flex; gap: 10px; position: sticky; bottom: 0;
@@ -229,7 +228,7 @@ dd { margin: 0; color: var(--text-2); }
   <header class="top">
     <p class="eyebrow">Ligue de tir Nord / Pas-de-Calais</p>
     <h1 id="titre">Calendrier des compétitions</h1>
-    <p class="lede">Championnats, matchs et tournois de la saison, de septembre 2026 à septembre 2027. Filtrez par catégorie, par niveau ou par discipline.
+    <p class="lede">Championnats, matchs et tournois de la saison, de septembre 2026 à septembre 2027. Filtrez par catégorie, par type d’épreuve ou par discipline.
       <small id="maj">Calendrier prévisionnel de la ligue. Dates et lieux susceptibles d’évoluer.</small></p>
   </header>
 
@@ -247,7 +246,7 @@ dd { margin: 0; color: var(--text-2); }
         <button class="close" id="close-panel" type="button" aria-label="Fermer les filtres">✕</button>
       </div>
       <div class="frow"><h3 class="flabel">Catégorie</h3><div class="chips" id="f-cat"></div></div>
-      <div class="frow"><h3 class="flabel">Niveau</h3><div class="chips" id="f-niveau"></div></div>
+      <div class="frow"><h3 class="flabel">Type</h3><div class="chips" id="f-fam"></div></div>
       <div class="frow"><h3 class="flabel">Discipline</h3><div class="chips" id="f-disc"></div></div>
       <div class="frow"><h3 class="flabel">Affichage</h3>
         <div class="checks">
@@ -289,14 +288,13 @@ dd { margin: 0; color: var(--text-2); }
 
 <script>
 let DATA;
-const NIV_COLORS = { france: 'france', regional: 'regional', departemental: 'departemental', match: 'match', tournoi: 'tournoi' };
 const MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 const JOURS = ['dim','lun','mar','mer','jeu','ven','sam'];
 const today = new Date(); today.setHours(0,0,0,0);
 const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
 
 const EDT = ['poussin', 'benjamin', 'minime'];
-const state = { cats: new Set(), niveaux: new Set(), disc: new Set(), q: '', hidePast: true, limites: true };
+const state = { cats: new Set(), fams: new Set(), disc: new Set(), q: '', hidePast: true, limites: true };
 
 function chip(label, pressed, onClick, extra) {
   const b = document.createElement('button');
@@ -316,8 +314,8 @@ function renderFilters() {
     ...Object.entries(DATA.categories).map(([k, l]) =>
       chip(l, state.cats.has(k), () => { toggle(state.cats, k); update(); }))
   );
-  const niv = document.getElementById('f-niveau'); niv.replaceChildren(...Object.entries(DATA.niveaux).map(([k, l]) =>
-    chip(l, state.niveaux.has(k), () => { toggle(state.niveaux, k); update(); }, { color: `var(--n-${NIV_COLORS[k]})` })));
+  document.getElementById('f-fam').replaceChildren(...Object.entries(DATA.familles).map(([k, l]) =>
+    chip(l, state.fams.has(k), () => { toggle(state.fams, k); update(); })));
   // Disciplines : n'afficher que celles présentes pour les catégories choisies
   const used = new Set(DATA.evenements.filter(inCats).flatMap(e => e.disciplines));
   const disc = document.getElementById('f-disc'); disc.replaceChildren(...Object.entries(DATA.disciplines).filter(([k]) => used.has(k)).map(([k, l]) =>
@@ -339,7 +337,7 @@ function matches(e) {
   const isLim = e.type === 'date-limite';
   if (isLim && !state.limites) return false;
   if (!inCats(e)) return false;
-  if (state.niveaux.size && !state.niveaux.has(e.niveau)) return false;
+  if (state.fams.size && !state.fams.has(e.famille)) return false;
   if (state.disc.size && !e.disciplines.some(d => state.disc.has(d))) return false;
   if (state.hidePast && parse(e.fin || e.debut) < today) return false;
   if (state.q && !norm(e.titre + ' ' + (e.lieu || '')).includes(norm(state.q))) return false;
@@ -368,7 +366,7 @@ function renderList() {
   const nEp = rows.filter(e => e.type !== 'date-limite').length, nLim = rows.length - nEp;
   document.getElementById('apply-panel').textContent = nEp ? `Voir ${nEp > 1 ? 'les ' + nEp + ' épreuves' : "l’épreuve"}` : 'Aucune épreuve';
   document.getElementById('count').innerHTML = `<strong>${nEp}</strong> épreuve${nEp > 1 ? 's' : ''}` + (nLim ? ` · <strong>${nLim}</strong> échéance${nLim > 1 ? 's' : ''}` : '');
-  const dirty = !state.hidePast || state.cats.size || state.niveaux.size || state.disc.size || state.q || !state.limites;
+  const dirty = !state.hidePast || state.cats.size || state.fams.size || state.disc.size || state.q || !state.limites;
   document.getElementById('reset').hidden = !dirty;
   if (!rows.length) {
     list.innerHTML = `<p class="empty">Aucune compétition ne correspond à ces filtres.<br>Retirez un filtre ou décochez « Masquer les dates passées ».</p>`;
@@ -411,7 +409,7 @@ function renderActive() {
   const cats = new Set(state.cats);
   if (EDT.every(c => cats.has(c))) { tag('École de tir', () => EDT.forEach(c => state.cats.delete(c))); EDT.forEach(c => cats.delete(c)); }
   cats.forEach(c => tag(DATA.categories[c], () => state.cats.delete(c)));
-  state.niveaux.forEach(k => tag(DATA.niveaux[k], () => state.niveaux.delete(k)));
+  state.fams.forEach(k => tag(DATA.familles[k], () => state.fams.delete(k)));
   state.disc.forEach(k => tag(DATA.disciplines[k], () => state.disc.delete(k)));
   if (!state.limites) tag('Sans les échéances', () => { state.limites = true; document.getElementById('f-lim').checked = true; });
   if (!state.hidePast) tag('Dates passées incluses', () => { state.hidePast = true; document.getElementById('f-past').checked = true; });
@@ -437,7 +435,7 @@ document.getElementById('f-q').addEventListener('input', e => { state.q = e.targ
 document.getElementById('f-past').addEventListener('change', e => { state.hidePast = e.target.checked; renderList(); renderActive(); });
 document.getElementById('f-lim').addEventListener('change', e => { state.limites = e.target.checked; renderList(); renderActive(); });
 const toutEffacer = () => {
-  Object.assign(state, { q: '', limites: true, hidePast: true }); state.cats.clear(); state.niveaux.clear(); state.disc.clear();
+  Object.assign(state, { q: '', limites: true, hidePast: true }); state.cats.clear(); state.fams.clear(); state.disc.clear();
   document.getElementById('f-q').value = ''; document.getElementById('f-lim').checked = true; document.getElementById('f-past').checked = true; update();
 };
 document.getElementById('reset').addEventListener('click', toutEffacer);

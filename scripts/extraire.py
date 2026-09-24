@@ -30,6 +30,9 @@ DISCIPLINES = {"c10": "Carabine 10 m", "p10": "Pistolet 10 m", "arb": "Arbalète
                "aa": "Armes anciennes", "silh": "Silhouettes métalliques", "c300": "300 m et ISR",
                "plateau": "Plateau (fosse olympique)", "nc": "Non précisée"}
 
+FAMILLES = {"championnat": "Championnats GS / matchs de ligue",
+            "tournoi": "Tournois / challenges départementaux"}
+
 # Catégories FFTir. L'École de tir regroupe les trois premières ; le calendrier
 # ne distingue pas Senior/Dame 1, 2 et 3.
 CATEGORIES = {"poussin": "Poussin", "benjamin": "Benjamin", "minime": "Minime",
@@ -324,6 +327,8 @@ def extraire(chemin):
             if fin != debut:
                 e["fin"] = fin.isoformat()
             e["niveau"] = niv
+            # Colonne du PDF : championnats GS / matchs de ligue, ou tournois / challenges.
+            e["famille"] = "championnat" if col_champ else "tournoi"
             e["titre"] = joli_texte(titre)
             if lieu_txt:
                 e["lieu"] = lieu_txt
@@ -349,6 +354,7 @@ def extraire(chemin):
         "miseAJour": maj,
         "niveaux": NIVEAUX,
         "categories": CATEGORIES,
+        "familles": FAMILLES,
         "disciplines": DISCIPLINES,
         "evenements": evts,
     }, anomalies
