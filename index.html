@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Calendrier prévisionnel 2026-2027 des compétitions de la ligue de tir Nord/Pas-de-Calais, filtrable par public, niveau et discipline.">
+<meta name="robots" content="noindex">
+<title>Compétitions de la ligue 2026-2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@500&family=Oswald:wght@500;600&display=swap">
+<style>
+/* Jetons du TMNH Design System (src/styles/tokens). Mode sombre : extension dérivée des neutres. */
+:root {
+  --bg: #F8F7F5; --surface: #FFFFFF; --border: #DDD9D6; --border-strong: #C2BDB8;
+  --text: #1A1614; --text-2: #5C5450; --muted: #7D7470;
+  --gold: #DBAF66; --gold-text: #8A6930; --blue: #2E72C0; --blue-hover: #235BA0;
+  --chip-on-bg: #1A1614; --chip-on-text: #FFFFFF;
+  --n-france: #1B7B35; --n-france-bg: #E8F5EC;
+  --n-regional: #235BA0; --n-regional-bg: #EEF4FB;
+  --n-departemental: #8A6930; --n-departemental-bg: #FBF6EC;
+  --n-match: #A51E23; --n-match-bg: #FFF0F0;
+  --n-tournoi: #5C5450; --n-tournoi-bg: #EEECEB;
+  --edtir: #235BA0;
+  --font-heading: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #1A1614; --surface: #2A2522; --border: #403B38; --border-strong: #5C5450;
+    --text: #F8F7F5; --text-2: #C2BDB8; --muted: #A09890;
+    --gold-text: #E0BF76; --blue: #6FA8DC; --blue-hover: #A9CBEC;
+    --chip-on-bg: #F8F7F5; --chip-on-text: #1A1614;
+    --n-france: #7BD196; --n-france-bg: #1D3324;
+    --n-regional: #A9CBEC; --n-regional-bg: #122F5A;
+    --n-departemental: #EBD49F; --n-departemental-bg: #3D2F15;
+    --n-match: #FFA9AC; --n-match-bg: #5A0D10;
+    --n-tournoi: #DDD9D6; --n-tournoi-bg: #403B38;
+    --edtir: #A9CBEC;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1A1614; --surface: #2A2522; --border: #403B38; --border-strong: #5C5450;
+  --text: #F8F7F5; --text-2: #C2BDB8; --muted: #A09890;
+  --gold-text: #E0BF76; --blue: #6FA8DC; --blue-hover: #A9CBEC;
+  --chip-on-bg: #F8F7F5; --chip-on-text: #1A1614;
+  --n-france: #7BD196; --n-france-bg: #1D3324;
+  --n-regional: #A9CBEC; --n-regional-bg: #122F5A;
+  --n-departemental: #EBD49F; --n-departemental-bg: #3D2F15;
+  --n-match: #FFA9AC; --n-match-bg: #5A0D10;
+  --n-tournoi: #DDD9D6; --n-tournoi-bg: #403B38;
+  --edtir: #A9CBEC;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 64px; }
+header.top { padding-block: 28px 20px; border-bottom: 3px solid var(--gold); }
+.eyebrow {
+  font-family: var(--font-heading); font-weight: 500; font-size: 13px;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--gold-text); margin: 0 0 6px;
+}
+h1 {
+  font-family: var(--font-heading); font-weight: 600; font-size: clamp(28px, 7vw, 40px);
+  line-height: 1.1; letter-spacing: -.01em; margin: 0 0 10px; text-wrap: balance;
+}
+.lede { color: var(--text-2); margin: 0; max-width: 62ch; }
+.lede small { display: block; color: var(--muted); font-size: 13px; margin-top: 6px; }
+
+/* Barre de filtres */
+.filters {
+  background: var(--bg); padding-block: 12px 10px;
+  border-bottom: 1px solid var(--border);
+  display: grid; gap: 10px;
+}
+.frow { display: flex; gap: 8px; align-items: center; min-width: 0; }
+.flabel {
+  flex: none; width: 82px; font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+}
+.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-block: 2px; min-width: 0; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; font: 500 14px/1 var(--font-body); color: var(--text);
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: 999px; padding: 8px 12px; cursor: pointer; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 36px;
+}
+.chip:hover { border-color: var(--text-2); }
+.chip[aria-pressed="true"] { background: var(--chip-on-bg); color: var(--chip-on-text); border-color: var(--chip-on-bg); }
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.chip[aria-pressed="true"] .dot { box-shadow: 0 0 0 2px var(--chip-on-text); }
+.chip.edtir-chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.tools { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.search {
+  flex: 1 1 200px; min-width: 0; font: 400 15px var(--font-body); color: var(--text);
+  background: var(--surface); border: 1px solid var(--border-strong); border-radius: 8px;
+  padding: 8px 12px; min-height: 38px;
+}
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-2); cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--blue); margin: 0; }
+.status { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 14px; color: var(--text-2); }
+.status strong { font-family: var(--font-mono); color: var(--text); font-weight: 500; }
+.reset { font: 500 14px var(--font-body); color: var(--blue); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
+.reset:hover { color: var(--blue-hover); }
+
+/* Liste */
+.month { margin-top: 28px; }
+.month h2 {
+  font-family: var(--font-heading); font-weight: 500; font-size: 15px;
+  text-transform: uppercase; letter-spacing: .1em; color: var(--text-2);
+  margin: 0 0 10px; display: flex; align-items: center; gap: 10px;
+}
+.month h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.month h2 span { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0; color: var(--muted); }
+ol.events { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ev {
+  display: grid; grid-template-columns: 64px 1fr; gap: 14px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 4px solid var(--c); border-radius: 8px; padding: 12px 14px 12px 10px;
+}
+.ev.past { opacity: .55; }
+.date { text-align: center; font-family: var(--font-mono); line-height: 1.15; padding-top: 2px; }
+.date .dow { display: block; font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: .04em; }
+.date .num { display: block; font-size: 22px; font-weight: 500; color: var(--text); font-variant-numeric: tabular-nums; }
+.date .to { display: block; font-size: 11px; color: var(--text-2); margin-top: 3px; }
+.body { min-width: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+.pill {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  padding: 2px 8px; border-radius: 4px; color: var(--c); background: var(--cbg);
+}
+.pill.edtir { --c: var(--edtir); --cbg: transparent; border: 1px solid currentColor; padding: 1px 7px; }
+.ev h3 { font-family: var(--font-body); font-weight: 700; font-size: 16px; line-height: 1.35; margin: 0; text-wrap: pretty; }
+.where { color: var(--text-2); font-size: 14px; margin: 2px 0 0; }
+.where.tbc { font-style: italic; color: var(--muted); }
+.disc { display: flex; flex-wrap: wrap; gap: 4px 10px; margin: 6px 0 0; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
+.disc li::before { content: "◎ "; color: var(--gold-text); }
+
+.ev.limite { background: transparent; border-style: dashed; border-left-style: solid; }
+.ev.limite h3 { font-weight: 500; }
+.ev .note { font-size: 14px; color: var(--text-2); margin: 4px 0 0; }
+
+.empty { margin-top: 40px; text-align: center; color: var(--text-2); }
+
+details.gloss { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 16px; }
+details.gloss summary { font-family: var(--font-heading); font-weight: 500; font-size: 18px; cursor: pointer; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 14px 0 0; font-size: 15px; }
+dt { font-family: var(--font-mono); font-size: 13px; color: var(--gold-text); padding-top: 2px; }
+dd { margin: 0; color: var(--text-2); }
+.src { font-size: 13px; color: var(--muted); margin-top: 24px; }
+
+@media (min-width: 721px) and (min-height: 700px) {
+  .filters { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+}
+@media (max-width: 520px) {
+  .flabel { display: none; }
+  .frow { flex-direction: column; align-items: stretch; }
+  .ev { grid-template-columns: 52px 1fr; gap: 10px; }
+  .date .num { font-size: 19px; }
+}
+@media (prefers-reduced-motion: no-preference) { .chip, .reset { transition: background-color .15s, color .15s, border-color .15s; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Ligue de tir Nord / Pas-de-Calais</p>
+    <h1>Calendrier des compétitions 2026-2027</h1>
+    <p class="lede">Championnats, matchs et tournois de la saison, de septembre 2026 à septembre 2027. Filtrez par discipline, par niveau, ou n’affichez que les rendez-vous de l’École de tir.
+      <small>Calendrier prévisionnel de la ligue (version 4, à jour au 17 septembre 2026). Dates et lieux susceptibles d’évoluer.</small></p>
+  </header>
+
+  <div class="filters" id="filters">
+    <div class="frow"><span class="flabel">Public</span>
+      <div class="chips" id="f-public"></div></div>
+    <div class="frow"><span class="flabel">Niveau</span>
+      <div class="chips" id="f-niveau"></div></div>
+    <div class="frow"><span class="flabel">Discipline</span>
+      <div class="chips" id="f-disc"></div></div>
+    <div class="tools">
+      <input class="search" id="f-q" type="search" placeholder="Rechercher un lieu, un tournoi…" aria-label="Rechercher un lieu ou un tournoi">
+      <label class="check"><input type="checkbox" id="f-past" checked> Masquer les dates passées</label>
+      <label class="check"><input type="checkbox" id="f-lim" checked> Clôtures et échéances</label>
+    </div>
+    <div class="status"><span id="count"></span><button class="reset" id="reset" type="button">Tout afficher</button></div>
+  </div>
+
+  <main id="list" aria-live="polite"></main>
+
+  <details class="gloss" id="gloss">
+    <summary>Lexique des sigles</summary>
+    <dl>
+      <dt>EdTir</dt><dd>École de tir : les jeunes de 7 à 18 ans licenciés dans un club.</dd>
+      <dt>Challenge de l’Avenir</dt><dd>Circuit de compétitions réservé aux jeunes des écoles de tir, en plusieurs tours puis une finale.</dd>
+      <dt>CdFC</dt><dd>Coupe de France des clubs : compétition par équipes de club.</dd>
+      <dt>C10 / P10</dt><dd>Carabine et pistolet à air comprimé, à 10 mètres.</dd>
+      <dt>PV / PStd</dt><dd>Pistolet vitesse et pistolet standard.</dd>
+      <dt>AM10 / AF18</dt><dd>Arbalète match à 10 m, arbalète field à 18 m.</dd>
+      <dt>IR900</dt><dd>Arbalète field tirée en extérieur, jusqu’à 900 points.</dd>
+      <dt>RimFire</dt><dd>Tir à la carabine ou au pistolet en calibre .22 long rifle, sur cibles à distances variées.</dd>
+      <dt>TAR</dt><dd>Tir aux armes réglementaires : armes de conception militaire, à 25, 50 et 200 m.</dd>
+      <dt>ISR</dt><dd>Discipline de tir à 300 m (carabine), jugée avec le 300 m.</dd>
+      <dt>Suivant zones</dt><dd>Le même tour se tire le même week-end dans trois clubs : chaque tireur va dans celui de sa zone.</dd>
+      <dt>Clôture des régionaux</dt><dd>Fin de la période des championnats régionaux d’une discipline : les classements nationaux établis sur les scores régionaux sont publiés peu après.</dd>
+    </dl>
+  </details>
+  <p class="src" id="src"></p>
+</div>
+
+<script>
+const DATA = {"source": "Ligue de tir Nord/Pas-de-Calais — calendrier prévisionnel des activités sportives, saison 2026/2027 (V4, à jour au 17/9/2026)", "niveaux": {"france": "France", "regional": "Régional", "departemental": "Départemental", "match": "Match", "tournoi": "Tournoi / challenge"}, "disciplines": {"c10": "Carabine 10 m", "p10": "Pistolet 10 m", "arb": "Arbalète", "c50": "Carabine 50 m", "p2550": "Pistolet 25/50 m", "rimfire": "RimFire", "tar": "Armes réglementaires (TAR)", "aa": "Armes anciennes", "silh": "Silhouettes métalliques", "c300": "300 m et ISR", "plateau": "Plateau (fosse olympique)", "nc": "Non précisée"}, "evenements": [{"debut": "2026-09-05", "fin": "2026-09-06", "niveau": "tournoi", "titre": "Pléiade", "disciplines": ["nc"]}, {"debut": "2026-09-12", "fin": "2026-09-13", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 1er tour", "lieu": "Calais", "disciplines": ["nc"]}, {"debut": "2026-09-17", "fin": "2026-09-20", "niveau": "france", "titre": "Championnat de France fosse olympique", "lieu": "Cernay", "disciplines": ["plateau"]}, {"debut": "2026-09-18", "fin": "2026-09-20", "niveau": "france", "titre": "Championnat de France 300 m et ISR", "lieu": "CNTS Châteauroux", "disciplines": ["c300"]}, {"debut": "2026-09-19", "niveau": "tournoi", "titre": "Pléiade, finale", "lieu": "Jeumont", "disciplines": ["nc"]}, {"debut": "2026-09-19", "fin": "2026-09-20", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 1er tour", "lieu": "Calais", "disciplines": ["nc"]}, {"debut": "2026-09-26", "niveau": "tournoi", "titre": "Pléiade, finale", "lieu": "Jeumont", "disciplines": ["nc"]}, {"debut": "2026-09-26", "fin": "2026-09-27", "niveau": "match", "titre": "Match international", "lieu": "Villeneuve-d'Ascq", "disciplines": ["nc"]}, {"debut": "2026-09-26", "fin": "2026-09-27", "niveau": "match", "titre": "Match armes anciennes des ligues Lorraine, Nord-Pas-de-Calais et Picardie", "lieu": "Volmerange", "disciplines": ["aa"]}, {"debut": "2026-10-03", "fin": "2026-10-04", "niveau": "tournoi", "titre": "Tournoi Nord 10 m, 1er tour", "lieu": "Suivant zones : Jean Bart / UTVA / Trith-Saint-Léger", "disciplines": ["c10", "p10"]}, {"debut": "2026-10-10", "fin": "2026-10-11", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 2e tour", "lieu": "Béthune", "disciplines": ["nc"]}, {"debut": "2026-10-10", "fin": "2026-10-12", "niveau": "tournoi", "titre": "Tournoi 10 m Pas-de-Calais, 1er tour", "lieu": "Carvin", "disciplines": ["c10", "p10"]}, {"debut": "2026-10-17", "fin": "2026-10-18", "niveau": "tournoi", "titre": "Tournoi du Hainaut", "lieu": "Aulnoye-Aymeries", "disciplines": ["nc"]}, {"debut": "2026-10-17", "fin": "2026-10-18", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 2e tour", "lieu": "Béthune", "disciplines": ["nc"]}, {"debut": "2026-10-24", "fin": "2026-10-25", "niveau": "tournoi", "titre": "Tournoi Nord 10 m, 2e tour", "lieu": "Suivant zones : Cappelle-la-Grande / UTVA / Aulnoye", "disciplines": ["c10", "p10"]}, {"debut": "2026-10-31", "fin": "2026-11-01", "niveau": "match", "titre": "Match interligues jeunes 10 m", "lieu": "Volmerange", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2026-11-07", "fin": "2026-11-08", "niveau": "tournoi", "titre": "Challenge de l'Avenir Nord, 1er tour", "lieu": "Suivant zones : Cappelle / La Madeleine / Aulnoye", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2026-11-07", "fin": "2026-11-08", "niveau": "tournoi", "titre": "Tournoi 10 m Pas-de-Calais, 2e tour", "lieu": "Billy-Montigny", "disciplines": ["c10", "p10"]}, {"debut": "2026-11-07", "fin": "2026-11-08", "niveau": "tournoi", "titre": "Tournoi RimFire Pas-de-Calais, 1er tour", "lieu": "Arras", "disciplines": ["rimfire"]}, {"debut": "2026-11-14", "fin": "2026-11-15", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 3e tour", "lieu": "Oye-Plage", "disciplines": ["nc"]}, {"debut": "2026-11-14", "fin": "2026-11-15", "niveau": "tournoi", "titre": "Tournoi Nord 10 m, 3e tour", "lieu": "Suivant zones : Cappelle / Wattrelos / Maubeuge", "disciplines": ["c10", "p10"]}, {"debut": "2026-11-21", "fin": "2026-11-22", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 3e tour", "lieu": "Oye-Plage", "disciplines": ["nc"]}, {"debut": "2026-11-27", "fin": "2026-11-29", "niveau": "departemental", "titre": "Championnat départemental Nord pistolet 10 m, pistolet vitesse et pistolet standard 10 m", "lieu": "Wattrelos", "disciplines": ["p10"]}, {"debut": "2026-11-28", "fin": "2026-11-29", "niveau": "tournoi", "titre": "Tournoi 10 m Pas-de-Calais, 3e tour", "lieu": "Arras", "disciplines": ["c10", "p10"]}, {"debut": "2026-11-28", "fin": "2026-11-29", "niveau": "tournoi", "titre": "Challenge de l'Avenir Nord, 2e tour", "lieu": "Suivant zones : Jean Bart / Wattrelos / Maubeuge", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2026-11-29", "niveau": "match", "titre": "Match France – Belgique 10 m", "lieu": "Zwevegem (Belgique)", "disciplines": ["c10", "p10"]}, {"debut": "2026-12-05", "fin": "2026-12-06", "niveau": "departemental", "titre": "Championnat départemental Nord carabine 10 m et arbalète match 10 m", "lieu": "Villeneuve-d'Ascq", "disciplines": ["c10", "arb"]}, {"debut": "2026-12-06", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais de la Coupe de France des clubs École de tir", "lieu": "Arques", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2026-12-12", "niveau": "departemental", "titre": "Championnat départemental Nord arbalète field 18 m", "lieu": "Boussois", "disciplines": ["arb"]}, {"debut": "2026-12-12", "fin": "2026-12-13", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais carabine et pistolet 10 m (C10, P10, PV10, PStd10) et arbalète field 18 m", "lieu": "Bully-les-Mines", "disciplines": ["c10", "p10", "arb"]}, {"debut": "2026-12-12", "fin": "2026-12-13", "niveau": "tournoi", "titre": "Tournoi Nord 10 m, 4e tour", "lieu": "Suivant zones : Jean Bart / Douai / Caudry", "disciplines": ["c10", "p10"]}, {"debut": "2026-12-13", "niveau": "departemental", "titre": "Championnat départemental Nord de la Coupe de France des clubs École de tir", "lieu": "Wattrelos", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2026-12-19", "fin": "2026-12-20", "niveau": "departemental", "titre": "Départemental Nord de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)", "lieu": "Villeneuve-d'Ascq", "disciplines": ["c10", "p10"]}, {"debut": "2026-12-19", "fin": "2026-12-20", "niveau": "departemental", "titre": "Départemental Pas-de-Calais de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)", "lieu": "Carvin", "disciplines": ["c10", "p10"]}, {"debut": "2027-01-02", "fin": "2027-01-03", "niveau": "regional", "titre": "Championnat régional carabine, pistolet et arbalète 10 m / 18 m (C10, AM10, P10, PV, PStd10, AF18)", "lieu": "Bully-les-Mines", "disciplines": ["c10", "p10", "arb"]}, {"debut": "2027-01-09", "fin": "2027-01-10", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 4e tour", "lieu": "Saint-Omer", "disciplines": ["nc"]}, {"debut": "2027-01-09", "fin": "2027-01-10", "niveau": "tournoi", "titre": "Tournoi Nord 10 m, 5e tour", "lieu": "Suivant zones : Jean Bart / La Madeleine / Le Cateau", "disciplines": ["c10", "p10"]}, {"debut": "2027-01-10", "niveau": "regional", "titre": "Clôture des championnats régionaux 10 m et 18 m", "disciplines": ["c10", "p10", "arb"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-01-16", "niveau": "match", "titre": "Match Nord-Pas-de-Calais – Picardie 10 m / 18 m", "lieu": "Bully-les-Mines", "disciplines": ["c10", "p10", "arb"]}, {"debut": "2027-01-16", "fin": "2027-01-17", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 4e tour", "lieu": "Saint-Omer", "disciplines": ["nc"]}, {"debut": "2027-01-17", "niveau": "regional", "titre": "Régionaux de la Coupe de France des clubs École de tir", "lieu": "Longuenesse", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-01-23", "niveau": "tournoi", "titre": "Finale du Tournoi Nord 10 m", "lieu": "Douai", "disciplines": ["c10", "p10"]}, {"debut": "2027-01-23", "fin": "2027-01-24", "niveau": "tournoi", "titre": "Challenge de l'Avenir Nord, 3e tour", "lieu": "Suivant zones : Jean Bart / UTVA / Trith-Saint-Léger", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-01-30", "fin": "2027-01-31", "niveau": "regional", "titre": "Régionaux de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)", "lieu": "Arques", "disciplines": ["c10", "p10"]}, {"debut": "2027-01-31", "niveau": "regional", "titre": "Clôture des régionaux de la Coupe de France des clubs 10 m, adultes et École de tir", "disciplines": ["c10", "p10"], "ecoleDeTir": true, "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-02-06", "fin": "2027-02-07", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 5e tour", "lieu": "Cappelle-la-Grande", "disciplines": ["nc"]}, {"debut": "2027-02-08", "fin": "2027-02-13", "niveau": "france", "titre": "Championnat de France 10 m / 18 m : carabine, pistolet, pistolet standard, pistolet vitesse, arbalète match 10 m et arbalète field 18 m", "lieu": "Châlons-en-Champagne", "disciplines": ["c10", "p10", "arb"]}, {"debut": "2027-02-13", "fin": "2027-02-14", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 5e tour", "lieu": "Cappelle-la-Grande", "disciplines": ["nc"]}, {"debut": "2027-02-20", "fin": "2027-02-21", "niveau": "tournoi", "titre": "Challenge de l'Avenir Pas-de-Calais, 1er tour", "lieu": "Arras", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-02-20", "fin": "2027-02-21", "niveau": "tournoi", "titre": "Challenge de l'Avenir Nord, 4e tour", "lieu": "Suivant zones : Cappelle / La Madeleine / Le Cateau", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-02-25", "niveau": "tournoi", "titre": "Envoi des résultats du 1er tour du match postal RimFire Nord", "disciplines": ["rimfire"], "type": "date-limite"}, {"debut": "2027-02-27", "fin": "2027-02-28", "niveau": "tournoi", "titre": "Tournoi RimFire Pas-de-Calais, 2e tour", "lieu": "Billy-Montigny", "disciplines": ["rimfire"]}, {"debut": "2027-02-27", "fin": "2027-02-28", "niveau": "tournoi", "titre": "Challenge de l'Avenir Pas-de-Calais, 2e tour", "lieu": "Billy-Montigny", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-03-06", "fin": "2027-03-07", "niveau": "departemental", "titre": "Championnat départemental Nord École de tir", "lieu": "Wattrelos", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-03-06", "fin": "2027-03-07", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais École de tir", "lieu": "Arques", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-03-13", "fin": "2027-03-14", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 6e tour", "lieu": "Dunkerque", "disciplines": ["nc"]}, {"debut": "2027-03-13", "fin": "2027-03-14", "niveau": "france", "titre": "Coupe de France des clubs carabine et pistolet 10 m, adultes et École de tir", "lieu": "Narbonne", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-03-20", "niveau": "tournoi", "titre": "Finale du Challenge de l'Avenir Nord", "lieu": "Douai", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-03-20", "fin": "2027-03-21", "niveau": "tournoi", "titre": "Challenge de l'Avenir Pas-de-Calais, 3e tour", "lieu": "Carvin", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-03-20", "fin": "2027-03-21", "niveau": "tournoi", "titre": "Tournoi du Nord pistolet 25 m, 1er tour", "lieu": "Suivant zones : Jean Bart / Ronchin / Le Cateau", "disciplines": ["p2550"]}, {"debut": "2027-03-20", "fin": "2027-03-21", "niveau": "tournoi", "titre": "Tournoi Nord carabine 50 m, 1er tour", "lieu": "Maubeuge", "disciplines": ["c50"]}, {"debut": "2027-03-20", "fin": "2027-03-21", "niveau": "tournoi", "titre": "Tournoi de la Côte d'Opale, 6e tour", "lieu": "Dunkerque", "disciplines": ["nc"]}, {"debut": "2027-03-20", "fin": "2027-03-21", "niveau": "departemental", "titre": "Championnat départemental Nord armes anciennes", "lieu": "Maubeuge", "disciplines": ["aa"]}, {"debut": "2027-03-25", "niveau": "tournoi", "titre": "Challenge de l'Avenir Pas-de-Calais, 3e tour", "lieu": "Carvin", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-03-25", "niveau": "tournoi", "titre": "Envoi des résultats du 2e tour du match postal RimFire Nord", "disciplines": ["rimfire"], "type": "date-limite"}, {"debut": "2027-03-27", "niveau": "departemental", "titre": "Championnat départemental Nord RimFire", "lieu": "Raismes", "disciplines": ["rimfire"]}, {"debut": "2027-03-27", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais RimFire", "lieu": "Saint-Martin-au-Laërt", "disciplines": ["rimfire"]}, {"debut": "2027-03-27", "fin": "2027-03-28", "niveau": "regional", "titre": "Championnats régionaux Nord et Pas-de-Calais École de tir", "lieu": "Bully-les-Mines", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-04-03", "fin": "2027-04-04", "niveau": "departemental", "titre": "Championnat départemental Nord TAR 25-50 m", "lieu": "Tourcoing", "disciplines": ["tar"]}, {"debut": "2027-04-04", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais TAR 25-50 m", "lieu": "Billy-Montigny", "disciplines": ["tar"]}, {"debut": "2027-04-04", "niveau": "regional", "titre": "Clôture des championnats régionaux École de tir", "disciplines": ["c10", "p10"], "ecoleDeTir": true, "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-04-10", "fin": "2027-04-11", "niveau": "tournoi", "titre": "Tournoi Nord carabine 50 m, 2e tour", "lieu": "Villeneuve-d'Ascq", "disciplines": ["c50"]}, {"debut": "2027-04-10", "fin": "2027-04-11", "niveau": "tournoi", "titre": "Tournoi du Nord pistolet 25 m, 2e tour", "lieu": "Suivant zones : CTPN / Douai / Trith-Saint-Léger", "disciplines": ["p2550"]}, {"debut": "2027-04-10", "niveau": "departemental", "titre": "Championnat départemental Nord arbalète field IR900", "lieu": "Boussois", "disciplines": ["arb"]}, {"debut": "2027-04-10", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais arbalète field IR900", "lieu": "Carvin", "disciplines": ["arb"]}, {"debut": "2027-04-11", "niveau": "match", "titre": "Match France – Belgique 25 m / 50 m", "disciplines": ["p2550", "c50"]}, {"debut": "2027-04-17", "niveau": "tournoi", "titre": "Finale régionale du Challenge de l'Avenir", "lieu": "Bully-les-Mines", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-04-17", "niveau": "regional", "titre": "Championnats régionaux Nord et Pas-de-Calais RimFire", "lieu": "Saint-Martin-au-Laërt", "disciplines": ["rimfire"]}, {"debut": "2027-04-17", "fin": "2027-04-18", "niveau": "regional", "titre": "Championnat régional armes anciennes", "lieu": "Jeumont", "disciplines": ["aa"]}, {"debut": "2027-04-17", "fin": "2027-04-18", "niveau": "departemental", "titre": "Championnats départementaux Nord et Pas-de-Calais TAR 200 m", "lieu": "Bully-les-Mines", "disciplines": ["tar"]}, {"debut": "2027-04-18", "niveau": "regional", "titre": "Clôture des championnats régionaux RimFire", "disciplines": ["rimfire"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-04-22", "niveau": "tournoi", "titre": "Envoi des résultats du 3e tour du match postal RimFire Nord", "disciplines": ["rimfire"], "type": "date-limite"}, {"debut": "2027-04-24", "niveau": "departemental", "titre": "Championnat départemental Nord pistolet 25 m et 50 m", "lieu": "La Madeleine", "disciplines": ["p2550"]}, {"debut": "2027-04-24", "fin": "2027-04-25", "niveau": "departemental", "titre": "Championnat départemental Nord carabine 50 m", "lieu": "Villeneuve-d'Ascq", "disciplines": ["c50"]}, {"debut": "2027-04-25", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais pistolet vitesse 25 m", "lieu": "Bully-les-Mines", "disciplines": ["p2550"]}, {"debut": "2027-05-01", "fin": "2027-05-02", "niveau": "departemental", "titre": "Championnat départemental Nord pistolet 25 m et 50 m", "lieu": "La Madeleine", "disciplines": ["p2550"]}, {"debut": "2027-05-01", "fin": "2027-05-02", "niveau": "departemental", "titre": "Championnat départemental Pas-de-Calais 25 m et 50 m", "lieu": "Bully-les-Mines", "disciplines": ["p2550", "c50"]}, {"debut": "2027-05-01", "niveau": "regional", "titre": "Championnat régional arbalète field IR900", "lieu": "Boussois", "disciplines": ["arb"]}, {"debut": "2027-05-02", "niveau": "regional", "titre": "Clôture des championnats régionaux arbalète field IR900", "disciplines": ["arb"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-05-02", "niveau": "regional", "titre": "Clôture des championnats régionaux armes anciennes", "disciplines": ["aa"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-05-06", "fin": "2027-05-07", "niveau": "france", "titre": "Championnat de France des Écoles de tir", "lieu": "Châteauroux", "disciplines": ["c10", "p10"], "ecoleDeTir": true}, {"debut": "2027-05-08", "fin": "2027-05-09", "niveau": "regional", "titre": "Championnat régional TAR 25-50 m", "disciplines": ["tar"]}, {"debut": "2027-05-15", "niveau": "tournoi", "titre": "Finale du Tournoi RimFire", "lieu": "Douai", "disciplines": ["rimfire"]}, {"debut": "2027-05-15", "niveau": "regional", "titre": "Championnat régional arbalète match 30 m", "lieu": "Billy-Montigny", "disciplines": ["arb"]}, {"debut": "2027-05-15", "fin": "2027-05-16", "niveau": "regional", "titre": "Championnat régional TAR 200 m", "lieu": "Bully-les-Mines", "disciplines": ["tar"]}, {"debut": "2027-05-22", "fin": "2027-05-23", "niveau": "tournoi", "titre": "Tournoi du Nord pistolet 25 m, 3e tour", "lieu": "Suivant zones : Cappelle / UTVA / Onnaing", "disciplines": ["p2550"]}, {"debut": "2027-05-22", "fin": "2027-05-23", "niveau": "tournoi", "titre": "Tournoi Nord carabine 50 m, 3e tour", "lieu": "La Madeleine", "disciplines": ["c50"]}, {"debut": "2027-05-22", "fin": "2027-05-23", "niveau": "departemental", "titre": "Championnats départementaux silhouettes métalliques", "lieu": "Nesles", "disciplines": ["silh"]}, {"debut": "2027-05-23", "niveau": "regional", "titre": "Clôture des championnats régionaux arbalète match 30 m", "disciplines": ["arb"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-05-23", "niveau": "regional", "titre": "Clôture des championnats régionaux TAR (armes réglementaires)", "disciplines": ["tar"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-05-27", "fin": "2027-05-30", "niveau": "france", "titre": "Championnat de France RimFire", "lieu": "Châteauroux", "disciplines": ["rimfire"]}, {"debut": "2027-05-29", "fin": "2027-05-30", "niveau": "regional", "titre": "Championnat régional pistolet 25 m et 50 m", "lieu": "La Madeleine", "disciplines": ["p2550"]}, {"debut": "2027-05-29", "fin": "2027-05-30", "niveau": "regional", "titre": "Championnat régional carabine 50 m", "lieu": "Villeneuve-d'Ascq", "disciplines": ["c50"]}, {"debut": "2027-06-04", "fin": "2027-06-06", "niveau": "france", "titre": "Championnat de France arbalète field IR900", "lieu": "Bischwiller", "disciplines": ["arb"]}, {"debut": "2027-06-05", "fin": "2027-06-06", "niveau": "regional", "titre": "Championnat régional pistolet 25 m et 50 m", "lieu": "La Madeleine", "disciplines": ["p2550"]}, {"debut": "2027-06-05", "niveau": "regional", "titre": "Championnat régional carabine 50 m", "lieu": "Villeneuve-d'Ascq", "disciplines": ["c50"]}, {"debut": "2027-06-09", "fin": "2027-06-13", "niveau": "france", "titre": "Championnat de France armes anciennes", "lieu": "Volmerange", "disciplines": ["aa"]}, {"debut": "2027-06-12", "niveau": "tournoi", "titre": "Finale du Tournoi Nord carabine 50 m", "lieu": "Villeneuve-d'Ascq", "disciplines": ["c50"]}, {"debut": "2027-06-12", "fin": "2027-06-13", "niveau": "regional", "titre": "Championnat régional silhouettes métalliques", "lieu": "Nesles", "disciplines": ["silh"]}, {"debut": "2027-06-13", "niveau": "regional", "titre": "Clôture des championnats régionaux carabine 50 m, pistolet 25/50 m et Coupe de France des clubs 25/50 m", "disciplines": ["c50", "p2550"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-06-19", "niveau": "tournoi", "titre": "Finale régionale pistolet 25 m", "lieu": "Tourcoing", "disciplines": ["p2550"]}, {"debut": "2027-06-25", "fin": "2027-06-27", "niveau": "france", "titre": "Championnat de France arbalète match 30 m", "lieu": "Strasbourg", "disciplines": ["arb"]}, {"debut": "2027-06-25", "fin": "2027-06-27", "niveau": "france", "titre": "Championnat de France TAR (armes réglementaires)", "lieu": "Vitrolles", "disciplines": ["tar"]}, {"debut": "2027-06-26", "niveau": "tournoi", "titre": "Finale régionale carabine 50 m", "lieu": "Bully-les-Mines", "disciplines": ["c50"]}, {"debut": "2027-06-27", "niveau": "regional", "titre": "Clôture des championnats régionaux silhouettes métalliques", "disciplines": ["silh"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-07-11", "niveau": "regional", "titre": "Clôture des championnats régionaux carabine 300 m et ISR", "disciplines": ["c300"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-07-18", "niveau": "regional", "titre": "Clôture des championnats régionaux fosse olympique", "disciplines": ["plateau"], "type": "date-limite", "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."}, {"debut": "2027-07-21", "fin": "2027-07-28", "niveau": "france", "titre": "Championnat de France 25 m / 50 m et Coupe de France des clubs 25 m / 50 m", "lieu": "Moulins", "disciplines": ["p2550", "c50"]}, {"debut": "2027-08-01", "fin": "2027-08-07", "niveau": "france", "titre": "Championnat de France silhouettes métalliques", "lieu": "Volmerange", "disciplines": ["silh"]}, {"debut": "2027-09-10", "fin": "2027-09-12", "niveau": "france", "titre": "Championnat de France fosse olympique", "lieu": "Châteauroux", "disciplines": ["plateau"]}, {"debut": "2027-09-16", "fin": "2027-09-19", "niveau": "france", "titre": "Championnat de France 300 m et ISR", "lieu": "Châteauroux", "disciplines": ["c300"]}, {"debut": "2027-09-25", "fin": "2027-09-26", "niveau": "match", "titre": "Match armes anciennes des ligues Lorraine, Nord-Pas-de-Calais et Picardie", "disciplines": ["aa"], "dateAPreciser": true}]};
+const NIV_COLORS = { france: 'france', regional: 'regional', departemental: 'departemental', match: 'match', tournoi: 'tournoi' };
+const MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+const JOURS = ['dim','lun','mar','mer','jeu','ven','sam'];
+const today = new Date(); today.setHours(0,0,0,0);
+const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+
+const state = { public: 'tous', niveaux: new Set(), disc: new Set(), q: '', hidePast: true, limites: true };
+
+function chip(label, pressed, onClick, extra) {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'chip' + (extra?.cls ? ' ' + extra.cls : '');
+  b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+  if (extra?.color) { b.style.setProperty('--c', extra.color); const d = document.createElement('span'); d.className = 'dot'; b.append(d); }
+  b.append(label);
+  b.addEventListener('click', onClick);
+  return b;
+}
+
+function renderFilters() {
+  const pub = document.getElementById('f-public'); pub.replaceChildren(
+    chip('Tous les tireurs', state.public === 'tous', () => { state.public = 'tous'; update(); }),
+    chip('École de tir (7-18 ans)', state.public === 'edtir', () => { state.public = 'edtir'; update(); }, { cls: 'edtir-chip' })
+  );
+  const niv = document.getElementById('f-niveau'); niv.replaceChildren(...Object.entries(DATA.niveaux).map(([k, l]) =>
+    chip(l, state.niveaux.has(k), () => { toggle(state.niveaux, k); update(); }, { color: `var(--n-${NIV_COLORS[k]})` })));
+  // Disciplines : n'afficher que celles présentes pour le public choisi
+  const used = new Set(DATA.evenements.filter(e => state.public === 'tous' || e.ecoleDeTir).flatMap(e => e.disciplines));
+  const disc = document.getElementById('f-disc'); disc.replaceChildren(...Object.entries(DATA.disciplines).filter(([k]) => used.has(k)).map(([k, l]) =>
+    chip(l, state.disc.has(k), () => { toggle(state.disc, k); update(); })));
+}
+const toggle = (set, k) => set.has(k) ? set.delete(k) : set.add(k);
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+function matches(e) {
+  const isLim = e.type === 'date-limite';
+  if (isLim && !state.limites) return false;
+  if (state.public === 'edtir' && !e.ecoleDeTir) return false;
+  if (state.niveaux.size && !state.niveaux.has(e.niveau)) return false;
+  if (state.disc.size && !e.disciplines.some(d => state.disc.has(d))) return false;
+  if (state.hidePast && parse(e.fin || e.debut) < today) return false;
+  if (state.q && !norm(e.titre + ' ' + (e.lieu || '')).includes(norm(state.q))) return false;
+  return true;
+}
+
+function dateBlock(e) {
+  const d = parse(e.debut), f = e.fin ? parse(e.fin) : null;
+  const el = document.createElement('div'); el.className = 'date';
+  let to = '';
+  if (f) to = f.getMonth() !== d.getMonth() ? `au ${f.getDate()} ${MOIS[f.getMonth()].slice(0,4)}.` : `au ${JOURS[f.getDay()]} ${f.getDate()}`;
+  el.innerHTML = `<span class="dow">${JOURS[d.getDay()]}.</span><span class="num">${d.getDate()}</span>${to ? `<span class="to">${to}</span>` : ''}`;
+  el.setAttribute('aria-label', fullDate(e));
+  return el;
+}
+function fullDate(e) {
+  const d = parse(e.debut), f = e.fin ? parse(e.fin) : null;
+  const s = x => `${JOURS[x.getDay()]}. ${x.getDate()} ${MOIS[x.getMonth()]}`;
+  return f ? `du ${s(d)} au ${s(f)}` : `le ${s(d)}`;
+}
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+function renderList() {
+  const list = document.getElementById('list');
+  const rows = DATA.evenements.filter(matches);
+  const nEp = rows.filter(e => e.type !== 'date-limite').length, nLim = rows.length - nEp;
+  document.getElementById('count').innerHTML = `<strong>${nEp}</strong> épreuve${nEp > 1 ? 's' : ''}` + (nLim ? ` · <strong>${nLim}</strong> échéance${nLim > 1 ? 's' : ''}` : '');
+  const dirty = state.public !== 'tous' || state.niveaux.size || state.disc.size || state.q || !state.limites;
+  document.getElementById('reset').hidden = !dirty;
+  if (!rows.length) {
+    list.innerHTML = `<p class="empty">Aucune compétition ne correspond à ces filtres.<br>Retirez un filtre ou décochez « Masquer les dates passées ».</p>`;
+    return;
+  }
+  const groups = new Map();
+  for (const e of rows) { const d = parse(e.debut); const k = `${d.getFullYear()}-${d.getMonth()}`; if (!groups.has(k)) groups.set(k, { d, items: [] }); groups.get(k).items.push(e); }
+  list.replaceChildren(...[...groups.values()].map(({ d, items }) => {
+    const sec = document.createElement('section'); sec.className = 'month';
+    sec.innerHTML = `<h2>${MOIS[d.getMonth()]} ${d.getFullYear()} <span>${items.length}</span></h2>`;
+    const ol = document.createElement('ol'); ol.className = 'events';
+    for (const e of items) {
+      const li = document.createElement('li');
+      const isLim = e.type === 'date-limite';
+      li.className = 'ev' + (isLim ? ' limite' : '') + (parse(e.fin || e.debut) < today ? ' past' : '');
+      li.style.setProperty('--c', `var(--n-${e.niveau})`); li.style.setProperty('--cbg', `var(--n-${e.niveau}-bg)`);
+      li.append(dateBlock(e));
+      const b = document.createElement('div'); b.className = 'body';
+      const pills = [`<span class="pill">${isLim ? (e.niveau === 'regional' ? 'Clôture des régionaux' : 'Échéance') : DATA.niveaux[e.niveau]}</span>`];
+      if (e.ecoleDeTir) pills.push(`<span class="pill edtir">École de tir</span>`);
+      const lieu = e.dateAPreciser ? `<p class="where tbc">Date à préciser (fin septembre 2027)${e.lieu ? ' · ' + esc(e.lieu) : ''}</p>`
+        : e.lieu ? `<p class="where">${esc(e.lieu)}</p>` : (isLim ? '' : `<p class="where tbc">Lieu pas encore fixé</p>`);
+      const discs = e.disciplines.filter(d => d !== 'nc').map(d => `<li>${DATA.disciplines[d]}</li>`).join('');
+      b.innerHTML = `<div class="meta">${pills.join('')}</div><h3>${esc(e.titre)}</h3>${lieu}` +
+        (e.note ? `<p class="note">${esc(e.note)}</p>` : '') + (discs && !isLim ? `<ul class="disc">${discs}</ul>` : '');
+      li.append(b); ol.append(li);
+    }
+    sec.append(ol); return sec;
+  }));
+}
+
+function update() { renderFilters(); renderList(); }
+
+document.getElementById('f-q').addEventListener('input', e => { state.q = e.target.value.trim(); renderList(); });
+document.getElementById('f-past').addEventListener('change', e => { state.hidePast = e.target.checked; renderList(); });
+document.getElementById('f-lim').addEventListener('change', e => { state.limites = e.target.checked; renderList(); });
+document.getElementById('reset').addEventListener('click', () => {
+  Object.assign(state, { public: 'tous', q: '', limites: true }); state.niveaux.clear(); state.disc.clear();
+  document.getElementById('f-q').value = ''; document.getElementById('f-lim').checked = true; update();
+});
+if (location.hash === '#ecole-de-tir') state.public = 'edtir';
+document.getElementById('src').textContent = 'Source : ' + DATA.source + '.';
+update();
+</script>
+
+</body>
+</html>

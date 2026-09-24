@@ -1,0 +1,1282 @@
+{
+ "source": "Ligue de tir Nord/Pas-de-Calais — calendrier prévisionnel des activités sportives, saison 2026/2027 (V4, à jour au 17/9/2026)",
+ "niveaux": {
+  "france": "France",
+  "regional": "Régional",
+  "departemental": "Départemental",
+  "match": "Match",
+  "tournoi": "Tournoi / challenge"
+ },
+ "disciplines": {
+  "c10": "Carabine 10 m",
+  "p10": "Pistolet 10 m",
+  "arb": "Arbalète",
+  "c50": "Carabine 50 m",
+  "p2550": "Pistolet 25/50 m",
+  "rimfire": "RimFire",
+  "tar": "Armes réglementaires (TAR)",
+  "aa": "Armes anciennes",
+  "silh": "Silhouettes métalliques",
+  "c300": "300 m et ISR",
+  "plateau": "Plateau (fosse olympique)",
+  "nc": "Non précisée"
+ },
+ "evenements": [
+  {
+   "debut": "2026-09-05",
+   "fin": "2026-09-06",
+   "niveau": "tournoi",
+   "titre": "Pléiade",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-09-12",
+   "fin": "2026-09-13",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 1er tour",
+   "lieu": "Calais",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-09-17",
+   "fin": "2026-09-20",
+   "niveau": "france",
+   "titre": "Championnat de France fosse olympique",
+   "lieu": "Cernay",
+   "disciplines": [
+    "plateau"
+   ]
+  },
+  {
+   "debut": "2026-09-18",
+   "fin": "2026-09-20",
+   "niveau": "france",
+   "titre": "Championnat de France 300 m et ISR",
+   "lieu": "CNTS Châteauroux",
+   "disciplines": [
+    "c300"
+   ]
+  },
+  {
+   "debut": "2026-09-19",
+   "niveau": "tournoi",
+   "titre": "Pléiade, finale",
+   "lieu": "Jeumont",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-09-19",
+   "fin": "2026-09-20",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 1er tour",
+   "lieu": "Calais",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-09-26",
+   "niveau": "tournoi",
+   "titre": "Pléiade, finale",
+   "lieu": "Jeumont",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-09-26",
+   "fin": "2026-09-27",
+   "niveau": "match",
+   "titre": "Match international",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-09-26",
+   "fin": "2026-09-27",
+   "niveau": "match",
+   "titre": "Match armes anciennes des ligues Lorraine, Nord-Pas-de-Calais et Picardie",
+   "lieu": "Volmerange",
+   "disciplines": [
+    "aa"
+   ]
+  },
+  {
+   "debut": "2026-10-03",
+   "fin": "2026-10-04",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord 10 m, 1er tour",
+   "lieu": "Suivant zones : Jean Bart / UTVA / Trith-Saint-Léger",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-10-10",
+   "fin": "2026-10-11",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 2e tour",
+   "lieu": "Béthune",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-10-10",
+   "fin": "2026-10-12",
+   "niveau": "tournoi",
+   "titre": "Tournoi 10 m Pas-de-Calais, 1er tour",
+   "lieu": "Carvin",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-10-17",
+   "fin": "2026-10-18",
+   "niveau": "tournoi",
+   "titre": "Tournoi du Hainaut",
+   "lieu": "Aulnoye-Aymeries",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-10-17",
+   "fin": "2026-10-18",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 2e tour",
+   "lieu": "Béthune",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-10-24",
+   "fin": "2026-10-25",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord 10 m, 2e tour",
+   "lieu": "Suivant zones : Cappelle-la-Grande / UTVA / Aulnoye",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-10-31",
+   "fin": "2026-11-01",
+   "niveau": "match",
+   "titre": "Match interligues jeunes 10 m",
+   "lieu": "Volmerange",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2026-11-07",
+   "fin": "2026-11-08",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Nord, 1er tour",
+   "lieu": "Suivant zones : Cappelle / La Madeleine / Aulnoye",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2026-11-07",
+   "fin": "2026-11-08",
+   "niveau": "tournoi",
+   "titre": "Tournoi 10 m Pas-de-Calais, 2e tour",
+   "lieu": "Billy-Montigny",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-11-07",
+   "fin": "2026-11-08",
+   "niveau": "tournoi",
+   "titre": "Tournoi RimFire Pas-de-Calais, 1er tour",
+   "lieu": "Arras",
+   "disciplines": [
+    "rimfire"
+   ]
+  },
+  {
+   "debut": "2026-11-14",
+   "fin": "2026-11-15",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 3e tour",
+   "lieu": "Oye-Plage",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-11-14",
+   "fin": "2026-11-15",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord 10 m, 3e tour",
+   "lieu": "Suivant zones : Cappelle / Wattrelos / Maubeuge",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-11-21",
+   "fin": "2026-11-22",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 3e tour",
+   "lieu": "Oye-Plage",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2026-11-27",
+   "fin": "2026-11-29",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord pistolet 10 m, pistolet vitesse et pistolet standard 10 m",
+   "lieu": "Wattrelos",
+   "disciplines": [
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-11-28",
+   "fin": "2026-11-29",
+   "niveau": "tournoi",
+   "titre": "Tournoi 10 m Pas-de-Calais, 3e tour",
+   "lieu": "Arras",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-11-28",
+   "fin": "2026-11-29",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Nord, 2e tour",
+   "lieu": "Suivant zones : Jean Bart / Wattrelos / Maubeuge",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2026-11-29",
+   "niveau": "match",
+   "titre": "Match France – Belgique 10 m",
+   "lieu": "Zwevegem (Belgique)",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-12-05",
+   "fin": "2026-12-06",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord carabine 10 m et arbalète match 10 m",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "c10",
+    "arb"
+   ]
+  },
+  {
+   "debut": "2026-12-06",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais de la Coupe de France des clubs École de tir",
+   "lieu": "Arques",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2026-12-12",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord arbalète field 18 m",
+   "lieu": "Boussois",
+   "disciplines": [
+    "arb"
+   ]
+  },
+  {
+   "debut": "2026-12-12",
+   "fin": "2026-12-13",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais carabine et pistolet 10 m (C10, P10, PV10, PStd10) et arbalète field 18 m",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "c10",
+    "p10",
+    "arb"
+   ]
+  },
+  {
+   "debut": "2026-12-12",
+   "fin": "2026-12-13",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord 10 m, 4e tour",
+   "lieu": "Suivant zones : Jean Bart / Douai / Caudry",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-12-13",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord de la Coupe de France des clubs École de tir",
+   "lieu": "Wattrelos",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2026-12-19",
+   "fin": "2026-12-20",
+   "niveau": "departemental",
+   "titre": "Départemental Nord de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2026-12-19",
+   "fin": "2026-12-20",
+   "niveau": "departemental",
+   "titre": "Départemental Pas-de-Calais de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)",
+   "lieu": "Carvin",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2027-01-02",
+   "fin": "2027-01-03",
+   "niveau": "regional",
+   "titre": "Championnat régional carabine, pistolet et arbalète 10 m / 18 m (C10, AM10, P10, PV, PStd10, AF18)",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "c10",
+    "p10",
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-01-09",
+   "fin": "2027-01-10",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 4e tour",
+   "lieu": "Saint-Omer",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2027-01-09",
+   "fin": "2027-01-10",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord 10 m, 5e tour",
+   "lieu": "Suivant zones : Jean Bart / La Madeleine / Le Cateau",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2027-01-10",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux 10 m et 18 m",
+   "disciplines": [
+    "c10",
+    "p10",
+    "arb"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-01-16",
+   "niveau": "match",
+   "titre": "Match Nord-Pas-de-Calais – Picardie 10 m / 18 m",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "c10",
+    "p10",
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-01-16",
+   "fin": "2027-01-17",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 4e tour",
+   "lieu": "Saint-Omer",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2027-01-17",
+   "niveau": "regional",
+   "titre": "Régionaux de la Coupe de France des clubs École de tir",
+   "lieu": "Longuenesse",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-01-23",
+   "niveau": "tournoi",
+   "titre": "Finale du Tournoi Nord 10 m",
+   "lieu": "Douai",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2027-01-23",
+   "fin": "2027-01-24",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Nord, 3e tour",
+   "lieu": "Suivant zones : Jean Bart / UTVA / Trith-Saint-Léger",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-01-30",
+   "fin": "2027-01-31",
+   "niveau": "regional",
+   "titre": "Régionaux de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)",
+   "lieu": "Arques",
+   "disciplines": [
+    "c10",
+    "p10"
+   ]
+  },
+  {
+   "debut": "2027-01-31",
+   "niveau": "regional",
+   "titre": "Clôture des régionaux de la Coupe de France des clubs 10 m, adultes et École de tir",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true,
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-02-06",
+   "fin": "2027-02-07",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 5e tour",
+   "lieu": "Cappelle-la-Grande",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2027-02-08",
+   "fin": "2027-02-13",
+   "niveau": "france",
+   "titre": "Championnat de France 10 m / 18 m : carabine, pistolet, pistolet standard, pistolet vitesse, arbalète match 10 m et arbalète field 18 m",
+   "lieu": "Châlons-en-Champagne",
+   "disciplines": [
+    "c10",
+    "p10",
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-02-13",
+   "fin": "2027-02-14",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 5e tour",
+   "lieu": "Cappelle-la-Grande",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2027-02-20",
+   "fin": "2027-02-21",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Pas-de-Calais, 1er tour",
+   "lieu": "Arras",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-02-20",
+   "fin": "2027-02-21",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Nord, 4e tour",
+   "lieu": "Suivant zones : Cappelle / La Madeleine / Le Cateau",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-02-25",
+   "niveau": "tournoi",
+   "titre": "Envoi des résultats du 1er tour du match postal RimFire Nord",
+   "disciplines": [
+    "rimfire"
+   ],
+   "type": "date-limite"
+  },
+  {
+   "debut": "2027-02-27",
+   "fin": "2027-02-28",
+   "niveau": "tournoi",
+   "titre": "Tournoi RimFire Pas-de-Calais, 2e tour",
+   "lieu": "Billy-Montigny",
+   "disciplines": [
+    "rimfire"
+   ]
+  },
+  {
+   "debut": "2027-02-27",
+   "fin": "2027-02-28",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Pas-de-Calais, 2e tour",
+   "lieu": "Billy-Montigny",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-03-06",
+   "fin": "2027-03-07",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord École de tir",
+   "lieu": "Wattrelos",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-03-06",
+   "fin": "2027-03-07",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais École de tir",
+   "lieu": "Arques",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-03-13",
+   "fin": "2027-03-14",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 6e tour",
+   "lieu": "Dunkerque",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2027-03-13",
+   "fin": "2027-03-14",
+   "niveau": "france",
+   "titre": "Coupe de France des clubs carabine et pistolet 10 m, adultes et École de tir",
+   "lieu": "Narbonne",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-03-20",
+   "niveau": "tournoi",
+   "titre": "Finale du Challenge de l'Avenir Nord",
+   "lieu": "Douai",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-03-20",
+   "fin": "2027-03-21",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Pas-de-Calais, 3e tour",
+   "lieu": "Carvin",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-03-20",
+   "fin": "2027-03-21",
+   "niveau": "tournoi",
+   "titre": "Tournoi du Nord pistolet 25 m, 1er tour",
+   "lieu": "Suivant zones : Jean Bart / Ronchin / Le Cateau",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-03-20",
+   "fin": "2027-03-21",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord carabine 50 m, 1er tour",
+   "lieu": "Maubeuge",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-03-20",
+   "fin": "2027-03-21",
+   "niveau": "tournoi",
+   "titre": "Tournoi de la Côte d'Opale, 6e tour",
+   "lieu": "Dunkerque",
+   "disciplines": [
+    "nc"
+   ]
+  },
+  {
+   "debut": "2027-03-20",
+   "fin": "2027-03-21",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord armes anciennes",
+   "lieu": "Maubeuge",
+   "disciplines": [
+    "aa"
+   ]
+  },
+  {
+   "debut": "2027-03-25",
+   "niveau": "tournoi",
+   "titre": "Challenge de l'Avenir Pas-de-Calais, 3e tour",
+   "lieu": "Carvin",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-03-25",
+   "niveau": "tournoi",
+   "titre": "Envoi des résultats du 2e tour du match postal RimFire Nord",
+   "disciplines": [
+    "rimfire"
+   ],
+   "type": "date-limite"
+  },
+  {
+   "debut": "2027-03-27",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord RimFire",
+   "lieu": "Raismes",
+   "disciplines": [
+    "rimfire"
+   ]
+  },
+  {
+   "debut": "2027-03-27",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais RimFire",
+   "lieu": "Saint-Martin-au-Laërt",
+   "disciplines": [
+    "rimfire"
+   ]
+  },
+  {
+   "debut": "2027-03-27",
+   "fin": "2027-03-28",
+   "niveau": "regional",
+   "titre": "Championnats régionaux Nord et Pas-de-Calais École de tir",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-04-03",
+   "fin": "2027-04-04",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord TAR 25-50 m",
+   "lieu": "Tourcoing",
+   "disciplines": [
+    "tar"
+   ]
+  },
+  {
+   "debut": "2027-04-04",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais TAR 25-50 m",
+   "lieu": "Billy-Montigny",
+   "disciplines": [
+    "tar"
+   ]
+  },
+  {
+   "debut": "2027-04-04",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux École de tir",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true,
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-04-10",
+   "fin": "2027-04-11",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord carabine 50 m, 2e tour",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-04-10",
+   "fin": "2027-04-11",
+   "niveau": "tournoi",
+   "titre": "Tournoi du Nord pistolet 25 m, 2e tour",
+   "lieu": "Suivant zones : CTPN / Douai / Trith-Saint-Léger",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-04-10",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord arbalète field IR900",
+   "lieu": "Boussois",
+   "disciplines": [
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-04-10",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais arbalète field IR900",
+   "lieu": "Carvin",
+   "disciplines": [
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-04-11",
+   "niveau": "match",
+   "titre": "Match France – Belgique 25 m / 50 m",
+   "disciplines": [
+    "p2550",
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-04-17",
+   "niveau": "tournoi",
+   "titre": "Finale régionale du Challenge de l'Avenir",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-04-17",
+   "niveau": "regional",
+   "titre": "Championnats régionaux Nord et Pas-de-Calais RimFire",
+   "lieu": "Saint-Martin-au-Laërt",
+   "disciplines": [
+    "rimfire"
+   ]
+  },
+  {
+   "debut": "2027-04-17",
+   "fin": "2027-04-18",
+   "niveau": "regional",
+   "titre": "Championnat régional armes anciennes",
+   "lieu": "Jeumont",
+   "disciplines": [
+    "aa"
+   ]
+  },
+  {
+   "debut": "2027-04-17",
+   "fin": "2027-04-18",
+   "niveau": "departemental",
+   "titre": "Championnats départementaux Nord et Pas-de-Calais TAR 200 m",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "tar"
+   ]
+  },
+  {
+   "debut": "2027-04-18",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux RimFire",
+   "disciplines": [
+    "rimfire"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-04-22",
+   "niveau": "tournoi",
+   "titre": "Envoi des résultats du 3e tour du match postal RimFire Nord",
+   "disciplines": [
+    "rimfire"
+   ],
+   "type": "date-limite"
+  },
+  {
+   "debut": "2027-04-24",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord pistolet 25 m et 50 m",
+   "lieu": "La Madeleine",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-04-24",
+   "fin": "2027-04-25",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord carabine 50 m",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-04-25",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais pistolet vitesse 25 m",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-05-01",
+   "fin": "2027-05-02",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Nord pistolet 25 m et 50 m",
+   "lieu": "La Madeleine",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-05-01",
+   "fin": "2027-05-02",
+   "niveau": "departemental",
+   "titre": "Championnat départemental Pas-de-Calais 25 m et 50 m",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "p2550",
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-05-01",
+   "niveau": "regional",
+   "titre": "Championnat régional arbalète field IR900",
+   "lieu": "Boussois",
+   "disciplines": [
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-05-02",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux arbalète field IR900",
+   "disciplines": [
+    "arb"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-05-02",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux armes anciennes",
+   "disciplines": [
+    "aa"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-05-06",
+   "fin": "2027-05-07",
+   "niveau": "france",
+   "titre": "Championnat de France des Écoles de tir",
+   "lieu": "Châteauroux",
+   "disciplines": [
+    "c10",
+    "p10"
+   ],
+   "ecoleDeTir": true
+  },
+  {
+   "debut": "2027-05-08",
+   "fin": "2027-05-09",
+   "niveau": "regional",
+   "titre": "Championnat régional TAR 25-50 m",
+   "disciplines": [
+    "tar"
+   ]
+  },
+  {
+   "debut": "2027-05-15",
+   "niveau": "tournoi",
+   "titre": "Finale du Tournoi RimFire",
+   "lieu": "Douai",
+   "disciplines": [
+    "rimfire"
+   ]
+  },
+  {
+   "debut": "2027-05-15",
+   "niveau": "regional",
+   "titre": "Championnat régional arbalète match 30 m",
+   "lieu": "Billy-Montigny",
+   "disciplines": [
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-05-15",
+   "fin": "2027-05-16",
+   "niveau": "regional",
+   "titre": "Championnat régional TAR 200 m",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "tar"
+   ]
+  },
+  {
+   "debut": "2027-05-22",
+   "fin": "2027-05-23",
+   "niveau": "tournoi",
+   "titre": "Tournoi du Nord pistolet 25 m, 3e tour",
+   "lieu": "Suivant zones : Cappelle / UTVA / Onnaing",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-05-22",
+   "fin": "2027-05-23",
+   "niveau": "tournoi",
+   "titre": "Tournoi Nord carabine 50 m, 3e tour",
+   "lieu": "La Madeleine",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-05-22",
+   "fin": "2027-05-23",
+   "niveau": "departemental",
+   "titre": "Championnats départementaux silhouettes métalliques",
+   "lieu": "Nesles",
+   "disciplines": [
+    "silh"
+   ]
+  },
+  {
+   "debut": "2027-05-23",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux arbalète match 30 m",
+   "disciplines": [
+    "arb"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-05-23",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux TAR (armes réglementaires)",
+   "disciplines": [
+    "tar"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-05-27",
+   "fin": "2027-05-30",
+   "niveau": "france",
+   "titre": "Championnat de France RimFire",
+   "lieu": "Châteauroux",
+   "disciplines": [
+    "rimfire"
+   ]
+  },
+  {
+   "debut": "2027-05-29",
+   "fin": "2027-05-30",
+   "niveau": "regional",
+   "titre": "Championnat régional pistolet 25 m et 50 m",
+   "lieu": "La Madeleine",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-05-29",
+   "fin": "2027-05-30",
+   "niveau": "regional",
+   "titre": "Championnat régional carabine 50 m",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-06-04",
+   "fin": "2027-06-06",
+   "niveau": "france",
+   "titre": "Championnat de France arbalète field IR900",
+   "lieu": "Bischwiller",
+   "disciplines": [
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-06-05",
+   "fin": "2027-06-06",
+   "niveau": "regional",
+   "titre": "Championnat régional pistolet 25 m et 50 m",
+   "lieu": "La Madeleine",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-06-05",
+   "niveau": "regional",
+   "titre": "Championnat régional carabine 50 m",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-06-09",
+   "fin": "2027-06-13",
+   "niveau": "france",
+   "titre": "Championnat de France armes anciennes",
+   "lieu": "Volmerange",
+   "disciplines": [
+    "aa"
+   ]
+  },
+  {
+   "debut": "2027-06-12",
+   "niveau": "tournoi",
+   "titre": "Finale du Tournoi Nord carabine 50 m",
+   "lieu": "Villeneuve-d'Ascq",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-06-12",
+   "fin": "2027-06-13",
+   "niveau": "regional",
+   "titre": "Championnat régional silhouettes métalliques",
+   "lieu": "Nesles",
+   "disciplines": [
+    "silh"
+   ]
+  },
+  {
+   "debut": "2027-06-13",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux carabine 50 m, pistolet 25/50 m et Coupe de France des clubs 25/50 m",
+   "disciplines": [
+    "c50",
+    "p2550"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-06-19",
+   "niveau": "tournoi",
+   "titre": "Finale régionale pistolet 25 m",
+   "lieu": "Tourcoing",
+   "disciplines": [
+    "p2550"
+   ]
+  },
+  {
+   "debut": "2027-06-25",
+   "fin": "2027-06-27",
+   "niveau": "france",
+   "titre": "Championnat de France arbalète match 30 m",
+   "lieu": "Strasbourg",
+   "disciplines": [
+    "arb"
+   ]
+  },
+  {
+   "debut": "2027-06-25",
+   "fin": "2027-06-27",
+   "niveau": "france",
+   "titre": "Championnat de France TAR (armes réglementaires)",
+   "lieu": "Vitrolles",
+   "disciplines": [
+    "tar"
+   ]
+  },
+  {
+   "debut": "2027-06-26",
+   "niveau": "tournoi",
+   "titre": "Finale régionale carabine 50 m",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-06-27",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux silhouettes métalliques",
+   "disciplines": [
+    "silh"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-07-11",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux carabine 300 m et ISR",
+   "disciplines": [
+    "c300"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-07-18",
+   "niveau": "regional",
+   "titre": "Clôture des championnats régionaux fosse olympique",
+   "disciplines": [
+    "plateau"
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+  },
+  {
+   "debut": "2027-07-21",
+   "fin": "2027-07-28",
+   "niveau": "france",
+   "titre": "Championnat de France 25 m / 50 m et Coupe de France des clubs 25 m / 50 m",
+   "lieu": "Moulins",
+   "disciplines": [
+    "p2550",
+    "c50"
+   ]
+  },
+  {
+   "debut": "2027-08-01",
+   "fin": "2027-08-07",
+   "niveau": "france",
+   "titre": "Championnat de France silhouettes métalliques",
+   "lieu": "Volmerange",
+   "disciplines": [
+    "silh"
+   ]
+  },
+  {
+   "debut": "2027-09-10",
+   "fin": "2027-09-12",
+   "niveau": "france",
+   "titre": "Championnat de France fosse olympique",
+   "lieu": "Châteauroux",
+   "disciplines": [
+    "plateau"
+   ]
+  },
+  {
+   "debut": "2027-09-16",
+   "fin": "2027-09-19",
+   "niveau": "france",
+   "titre": "Championnat de France 300 m et ISR",
+   "lieu": "Châteauroux",
+   "disciplines": [
+    "c300"
+   ]
+  },
+  {
+   "debut": "2027-09-25",
+   "fin": "2027-09-26",
+   "niveau": "match",
+   "titre": "Match armes anciennes des ligues Lorraine, Nord-Pas-de-Calais et Picardie",
+   "disciplines": [
+    "aa"
+   ],
+   "dateAPreciser": true
+  }
+ ]
+}
