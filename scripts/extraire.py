@@ -187,6 +187,9 @@ def categories(titre, ecole_de_tir):
     """Règles fixées par le club : EdTir = poussin à minime ; tout le reste =
     cadet à senior/dame ; une épreuve « adultes et EdTir » les réunit."""
     t = sans_accents(titre).upper()
+    if "INTERLIGUE" in t and "JEUNE" in t:
+        # Challenge jeunes interligues FFTir : équipes de minimes et cadets.
+        return ["minime", "cadet"]
     if ecole_de_tir and "ADULTE" in t:
         return ECOLE_DE_TIR + CADET_ET_PLUS
     return ECOLE_DE_TIR if ecole_de_tir else CADET_ET_PLUS
