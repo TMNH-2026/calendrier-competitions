@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Calendrier prévisionnel 2026-2027 des compétitions de la ligue de tir Nord/Pas-de-Calais, filtrable par public, niveau et discipline.">
+<meta name="description" content="Calendrier prévisionnel 2026-2027 des compétitions de la ligue de tir Nord/Pas-de-Calais, filtrable par catégorie, niveau et discipline.">
 <meta name="robots" content="noindex">
 <title>Compétitions de la ligue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -146,6 +146,8 @@ ol.events { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .disc { display: flex; flex-wrap: wrap; gap: 4px 10px; margin: 6px 0 0; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
 .disc li::before { content: "◎ "; color: var(--gold-text); }
 
+.cats { margin: 4px 0 0; font-size: 13px; color: var(--text-2); }
+.cats::before { content: "Catégories : "; color: var(--muted); }
 .ev.limite { background: transparent; border-style: dashed; border-left-style: solid; }
 .ev.limite h3 { font-weight: 500; }
 .ev .note { font-size: 14px; color: var(--text-2); margin: 4px 0 0; }
@@ -164,6 +166,7 @@ dd { margin: 0; color: var(--text-2); }
 }
 @media (max-width: 520px) {
   .flabel { display: none; }
+  .chips { flex-wrap: wrap; overflow-x: visible; }
   .frow { flex-direction: column; align-items: stretch; }
   .ev { grid-template-columns: 52px 1fr; gap: 10px; }
   .date .num { font-size: 19px; }
@@ -177,13 +180,13 @@ dd { margin: 0; color: var(--text-2); }
   <header class="top">
     <p class="eyebrow">Ligue de tir Nord / Pas-de-Calais</p>
     <h1 id="titre">Calendrier des compétitions</h1>
-    <p class="lede">Championnats, matchs et tournois de la saison, de septembre 2026 à septembre 2027. Filtrez par discipline, par niveau, ou n’affichez que les rendez-vous de l’École de tir.
+    <p class="lede">Championnats, matchs et tournois de la saison, de septembre 2026 à septembre 2027. Filtrez par catégorie, par niveau ou par discipline.
       <small id="maj">Calendrier prévisionnel de la ligue. Dates et lieux susceptibles d’évoluer.</small></p>
   </header>
 
   <div class="filters" id="filters">
-    <div class="frow"><span class="flabel">Public</span>
-      <div class="chips" id="f-public"></div></div>
+    <div class="frow"><span class="flabel">Catégorie</span>
+      <div class="chips" id="f-cat"></div></div>
     <div class="frow"><span class="flabel">Niveau</span>
       <div class="chips" id="f-niveau"></div></div>
     <div class="frow"><span class="flabel">Discipline</span>
@@ -201,8 +204,8 @@ dd { margin: 0; color: var(--text-2); }
   <details class="gloss" id="gloss">
     <summary>Lexique des sigles</summary>
     <dl>
-      <dt>EdTir</dt><dd>École de tir : les jeunes de 7 à 18 ans licenciés dans un club.</dd>
-      <dt>Challenge de l’Avenir</dt><dd>Circuit de compétitions réservé aux jeunes des écoles de tir, en plusieurs tours puis une finale.</dd>
+      <dt>EdTir</dt><dd>École de tir : les catégories poussin, benjamin et minime.</dd>
+      <dt>Challenge de l’Avenir</dt><dd>Circuit de compétitions réservé aux tireurs des écoles de tir, en plusieurs tours puis une finale.</dd>
       <dt>CdFC</dt><dd>Coupe de France des clubs : compétition par équipes de club.</dd>
       <dt>C10 / P10</dt><dd>Carabine et pistolet à air comprimé, à 10 mètres.</dd>
       <dt>PV / PStd</dt><dd>Pistolet vitesse et pistolet standard.</dd>
@@ -211,6 +214,7 @@ dd { margin: 0; color: var(--text-2); }
       <dt>RimFire</dt><dd>Tir à la carabine ou au pistolet en calibre .22 long rifle, sur cibles à distances variées.</dd>
       <dt>TAR</dt><dd>Tir aux armes réglementaires : armes de conception militaire, à 25, 50 et 200 m.</dd>
       <dt>ISR</dt><dd>Discipline de tir à 300 m (carabine), jugée avec le 300 m.</dd>
+      <dt>Catégories</dt><dd>Le calendrier de la ligue ne les précise pas : les épreuves École de tir sont indiquées pour poussins, benjamins et minimes, toutes les autres pour cadets, juniors et seniors / dames (1, 2 et 3).</dd>
       <dt>Suivant zones</dt><dd>Le même tour se tire le même week-end dans trois clubs : chaque tireur va dans celui de sa zone.</dd>
       <dt>Clôture des régionaux</dt><dd>Fin de la période des championnats régionaux d’une discipline : les classements nationaux établis sur les scores régionaux sont publiés peu après.</dd>
     </dl>
@@ -226,7 +230,8 @@ const JOURS = ['dim','lun','mar','mer','jeu','ven','sam'];
 const today = new Date(); today.setHours(0,0,0,0);
 const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
 
-const state = { public: 'tous', niveaux: new Set(), disc: new Set(), q: '', hidePast: true, limites: true };
+const EDT = ['poussin', 'benjamin', 'minime'];
+const state = { cats: new Set(), niveaux: new Set(), disc: new Set(), q: '', hidePast: true, limites: true };
 
 function chip(label, pressed, onClick, extra) {
   const b = document.createElement('button');
@@ -239,24 +244,36 @@ function chip(label, pressed, onClick, extra) {
 }
 
 function renderFilters() {
-  const pub = document.getElementById('f-public'); pub.replaceChildren(
-    chip('Tous les tireurs', state.public === 'tous', () => { state.public = 'tous'; update(); }),
-    chip('École de tir (7-18 ans)', state.public === 'edtir', () => { state.public = 'edtir'; update(); }, { cls: 'edtir-chip' })
+  // « École de tir » coche d'un coup poussin, benjamin et minime.
+  const edtOn = EDT.every(c => state.cats.has(c));
+  document.getElementById('f-cat').replaceChildren(
+    chip('École de tir', edtOn, () => { EDT.forEach(c => edtOn ? state.cats.delete(c) : state.cats.add(c)); update(); }, { cls: 'edtir-chip' }),
+    ...Object.entries(DATA.categories).map(([k, l]) =>
+      chip(l, state.cats.has(k), () => { toggle(state.cats, k); update(); }))
   );
   const niv = document.getElementById('f-niveau'); niv.replaceChildren(...Object.entries(DATA.niveaux).map(([k, l]) =>
     chip(l, state.niveaux.has(k), () => { toggle(state.niveaux, k); update(); }, { color: `var(--n-${NIV_COLORS[k]})` })));
-  // Disciplines : n'afficher que celles présentes pour le public choisi
-  const used = new Set(DATA.evenements.filter(e => state.public === 'tous' || e.ecoleDeTir).flatMap(e => e.disciplines));
+  // Disciplines : n'afficher que celles présentes pour les catégories choisies
+  const used = new Set(DATA.evenements.filter(inCats).flatMap(e => e.disciplines));
   const disc = document.getElementById('f-disc'); disc.replaceChildren(...Object.entries(DATA.disciplines).filter(([k]) => used.has(k)).map(([k, l]) =>
     chip(l, state.disc.has(k), () => { toggle(state.disc, k); update(); })));
 }
 const toggle = (set, k) => set.has(k) ? set.delete(k) : set.add(k);
 const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
+const inCats = e => !state.cats.size || (e.categories || []).some(c => state.cats.has(c));
+function catLabel(cs) {
+  const keys = Object.keys(DATA.categories);
+  if (!cs?.length || cs.length === keys.length) return 'Toutes catégories';
+  const idx = cs.map(c => keys.indexOf(c)).sort((a, b) => a - b);
+  const contigu = idx.every((v, i) => i === 0 || v === idx[i - 1] + 1);
+  const L = i => DATA.categories[keys[i]];
+  return contigu && idx.length > 2 ? `${L(idx[0])} à ${L(idx[idx.length - 1])}` : idx.map(L).join(', ');
+}
 function matches(e) {
   const isLim = e.type === 'date-limite';
   if (isLim && !state.limites) return false;
-  if (state.public === 'edtir' && !e.ecoleDeTir) return false;
+  if (!inCats(e)) return false;
   if (state.niveaux.size && !state.niveaux.has(e.niveau)) return false;
   if (state.disc.size && !e.disciplines.some(d => state.disc.has(d))) return false;
   if (state.hidePast && parse(e.fin || e.debut) < today) return false;
@@ -285,7 +302,7 @@ function renderList() {
   const rows = DATA.evenements.filter(matches);
   const nEp = rows.filter(e => e.type !== 'date-limite').length, nLim = rows.length - nEp;
   document.getElementById('count').innerHTML = `<strong>${nEp}</strong> épreuve${nEp > 1 ? 's' : ''}` + (nLim ? ` · <strong>${nLim}</strong> échéance${nLim > 1 ? 's' : ''}` : '');
-  const dirty = state.public !== 'tous' || state.niveaux.size || state.disc.size || state.q || !state.limites;
+  const dirty = state.cats.size || state.niveaux.size || state.disc.size || state.q || !state.limites;
   document.getElementById('reset').hidden = !dirty;
   if (!rows.length) {
     list.innerHTML = `<p class="empty">Aucune compétition ne correspond à ces filtres.<br>Retirez un filtre ou décochez « Masquer les dates passées ».</p>`;
@@ -310,7 +327,8 @@ function renderList() {
         : e.lieu ? `<p class="where">${esc(e.lieu)}</p>` : (isLim ? '' : `<p class="where tbc">Lieu pas encore fixé</p>`);
       const discs = e.disciplines.filter(d => d !== 'nc').map(d => `<li>${DATA.disciplines[d]}</li>`).join('');
       b.innerHTML = `<div class="meta">${pills.join('')}</div><h3>${esc(e.titre)}</h3>${lieu}` +
-        (e.note ? `<p class="note">${esc(e.note)}</p>` : '') + (discs && !isLim ? `<ul class="disc">${discs}</ul>` : '');
+        (e.note ? `<p class="note">${esc(e.note)}</p>` : '') + (discs && !isLim ? `<ul class="disc">${discs}</ul>` : '') +
+        `<p class="cats">${catLabel(e.categories)}</p>`;
       li.append(b); ol.append(li);
     }
     sec.append(ol); return sec;
@@ -323,10 +341,10 @@ document.getElementById('f-q').addEventListener('input', e => { state.q = e.targ
 document.getElementById('f-past').addEventListener('change', e => { state.hidePast = e.target.checked; renderList(); });
 document.getElementById('f-lim').addEventListener('change', e => { state.limites = e.target.checked; renderList(); });
 document.getElementById('reset').addEventListener('click', () => {
-  Object.assign(state, { public: 'tous', q: '', limites: true }); state.niveaux.clear(); state.disc.clear();
+  Object.assign(state, { q: '', limites: true }); state.cats.clear(); state.niveaux.clear(); state.disc.clear();
   document.getElementById('f-q').value = ''; document.getElementById('f-lim').checked = true; update();
 });
-if (location.hash === '#ecole-de-tir') state.public = 'edtir';
+if (location.hash === '#ecole-de-tir') EDT.forEach(c => state.cats.add(c));
 fetch('calendrier.json', { cache: 'no-cache' })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(d => {

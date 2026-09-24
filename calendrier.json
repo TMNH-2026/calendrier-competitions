@@ -9,6 +9,14 @@
   "match": "Match",
   "tournoi": "Tournoi / challenge"
  },
+ "categories": {
+  "poussin": "Poussin",
+  "benjamin": "Benjamin",
+  "minime": "Minime",
+  "cadet": "Cadet",
+  "junior": "Junior",
+  "senior": "Senior / Dame"
+ },
  "disciplines": {
   "c10": "Carabine 10 m",
   "p10": "Pistolet 10 m",
@@ -31,6 +39,11 @@
    "titre": "Pléiade",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -41,6 +54,11 @@
    "lieu": "Calais",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -51,6 +69,11 @@
    "lieu": "Cernay",
    "disciplines": [
     "plateau"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -61,6 +84,11 @@
    "lieu": "CNTS Châteauroux",
    "disciplines": [
     "c300"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -70,6 +98,11 @@
    "lieu": "Jeumont",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -80,6 +113,11 @@
    "lieu": "Calais",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -89,6 +127,11 @@
    "lieu": "Jeumont",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -99,6 +142,11 @@
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -109,6 +157,11 @@
    "lieu": "Volmerange",
    "disciplines": [
     "aa"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -120,6 +173,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -130,6 +188,11 @@
    "lieu": "Béthune",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -141,6 +204,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -151,6 +219,11 @@
    "lieu": "Aulnoye-Aymeries",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -161,6 +234,11 @@
    "lieu": "Béthune",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -172,6 +250,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -184,7 +267,11 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2026-11-07",
@@ -196,7 +283,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2026-11-07",
@@ -207,6 +299,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -217,6 +314,11 @@
    "lieu": "Arras",
    "disciplines": [
     "rimfire"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -227,6 +329,11 @@
    "lieu": "Oye-Plage",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -238,6 +345,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -248,6 +360,11 @@
    "lieu": "Oye-Plage",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -258,6 +375,11 @@
    "lieu": "Wattrelos",
    "disciplines": [
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -269,6 +391,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -281,7 +408,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2026-11-29",
@@ -291,6 +423,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -302,6 +439,11 @@
    "disciplines": [
     "c10",
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -313,7 +455,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2026-12-12",
@@ -322,6 +469,11 @@
    "lieu": "Boussois",
    "disciplines": [
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -334,6 +486,11 @@
     "c10",
     "p10",
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -345,6 +502,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -356,7 +518,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2026-12-19",
@@ -367,6 +534,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -378,6 +550,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -390,6 +567,11 @@
     "c10",
     "p10",
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -400,6 +582,11 @@
    "lieu": "Saint-Omer",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -411,6 +598,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -423,7 +615,12 @@
     "arb"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-01-16",
@@ -434,6 +631,11 @@
     "c10",
     "p10",
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -444,6 +646,11 @@
    "lieu": "Saint-Omer",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -455,7 +662,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-01-23",
@@ -465,6 +677,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -477,7 +694,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-01-30",
@@ -488,6 +710,11 @@
    "disciplines": [
     "c10",
     "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -500,7 +727,15 @@
    ],
    "ecoleDeTir": true,
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime",
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-02-06",
@@ -510,6 +745,11 @@
    "lieu": "Cappelle-la-Grande",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -522,6 +762,11 @@
     "c10",
     "p10",
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -532,6 +777,11 @@
    "lieu": "Cappelle-la-Grande",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -544,7 +794,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-02-20",
@@ -556,7 +811,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-02-25",
@@ -565,7 +825,12 @@
    "disciplines": [
     "rimfire"
    ],
-   "type": "date-limite"
+   "type": "date-limite",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-02-27",
@@ -575,6 +840,11 @@
    "lieu": "Billy-Montigny",
    "disciplines": [
     "rimfire"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -587,7 +857,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-03-06",
@@ -599,7 +874,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-03-06",
@@ -611,7 +891,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-03-13",
@@ -621,6 +906,11 @@
    "lieu": "Dunkerque",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -633,7 +923,15 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime",
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-03-20",
@@ -644,7 +942,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-03-20",
@@ -656,7 +959,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-03-20",
@@ -666,6 +974,11 @@
    "lieu": "Suivant zones : Jean Bart / Ronchin / Le Cateau",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -676,6 +989,11 @@
    "lieu": "Maubeuge",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -686,6 +1004,11 @@
    "lieu": "Dunkerque",
    "disciplines": [
     "nc"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -696,6 +1019,11 @@
    "lieu": "Maubeuge",
    "disciplines": [
     "aa"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -707,7 +1035,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-03-25",
@@ -716,7 +1049,12 @@
    "disciplines": [
     "rimfire"
    ],
-   "type": "date-limite"
+   "type": "date-limite",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-03-27",
@@ -725,6 +1063,11 @@
    "lieu": "Raismes",
    "disciplines": [
     "rimfire"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -734,6 +1077,11 @@
    "lieu": "Saint-Martin-au-Laërt",
    "disciplines": [
     "rimfire"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -746,7 +1094,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-04-03",
@@ -756,6 +1109,11 @@
    "lieu": "Tourcoing",
    "disciplines": [
     "tar"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -765,6 +1123,11 @@
    "lieu": "Billy-Montigny",
    "disciplines": [
     "tar"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -777,7 +1140,12 @@
    ],
    "ecoleDeTir": true,
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-04-10",
@@ -787,6 +1155,11 @@
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -797,6 +1170,11 @@
    "lieu": "Suivant zones : CTPN / Douai / Trith-Saint-Léger",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -806,6 +1184,11 @@
    "lieu": "Boussois",
    "disciplines": [
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -815,6 +1198,11 @@
    "lieu": "Carvin",
    "disciplines": [
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -824,6 +1212,11 @@
    "disciplines": [
     "p2550",
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -835,7 +1228,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-04-17",
@@ -844,6 +1242,11 @@
    "lieu": "Saint-Martin-au-Laërt",
    "disciplines": [
     "rimfire"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -854,6 +1257,11 @@
    "lieu": "Jeumont",
    "disciplines": [
     "aa"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -864,6 +1272,11 @@
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "tar"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -874,7 +1287,12 @@
     "rimfire"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-04-22",
@@ -883,7 +1301,12 @@
    "disciplines": [
     "rimfire"
    ],
-   "type": "date-limite"
+   "type": "date-limite",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-04-24",
@@ -892,6 +1315,11 @@
    "lieu": "La Madeleine",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -902,6 +1330,11 @@
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -911,6 +1344,11 @@
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -921,6 +1359,11 @@
    "lieu": "La Madeleine",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -932,6 +1375,11 @@
    "disciplines": [
     "p2550",
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -941,6 +1389,11 @@
    "lieu": "Boussois",
    "disciplines": [
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -951,7 +1404,12 @@
     "arb"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-05-02",
@@ -961,7 +1419,12 @@
     "aa"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-05-06",
@@ -973,7 +1436,12 @@
     "c10",
     "p10"
    ],
-   "ecoleDeTir": true
+   "ecoleDeTir": true,
+   "categories": [
+    "poussin",
+    "benjamin",
+    "minime"
+   ]
   },
   {
    "debut": "2027-05-08",
@@ -982,6 +1450,11 @@
    "titre": "Championnat régional TAR 25-50 m",
    "disciplines": [
     "tar"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -991,6 +1464,11 @@
    "lieu": "Douai",
    "disciplines": [
     "rimfire"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1000,6 +1478,11 @@
    "lieu": "Billy-Montigny",
    "disciplines": [
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1010,6 +1493,11 @@
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "tar"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1020,6 +1508,11 @@
    "lieu": "Suivant zones : Cappelle / UTVA / Onnaing",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1030,6 +1523,11 @@
    "lieu": "La Madeleine",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1040,6 +1538,11 @@
    "lieu": "Nesles",
    "disciplines": [
     "silh"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1050,7 +1553,12 @@
     "arb"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-05-23",
@@ -1060,7 +1568,12 @@
     "tar"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-05-27",
@@ -1070,6 +1583,11 @@
    "lieu": "Châteauroux",
    "disciplines": [
     "rimfire"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1080,6 +1598,11 @@
    "lieu": "La Madeleine",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1090,6 +1613,11 @@
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1100,6 +1628,11 @@
    "lieu": "Bischwiller",
    "disciplines": [
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1110,6 +1643,11 @@
    "lieu": "La Madeleine",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1119,6 +1657,11 @@
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1129,6 +1672,11 @@
    "lieu": "Volmerange",
    "disciplines": [
     "aa"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1138,6 +1686,11 @@
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1148,6 +1701,11 @@
    "lieu": "Nesles",
    "disciplines": [
     "silh"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1159,7 +1717,12 @@
     "p2550"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-06-19",
@@ -1168,6 +1731,11 @@
    "lieu": "Tourcoing",
    "disciplines": [
     "p2550"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1178,6 +1746,11 @@
    "lieu": "Strasbourg",
    "disciplines": [
     "arb"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1188,6 +1761,11 @@
    "lieu": "Vitrolles",
    "disciplines": [
     "tar"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1197,6 +1775,11 @@
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1207,7 +1790,12 @@
     "silh"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-07-11",
@@ -1217,7 +1805,12 @@
     "c300"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-07-18",
@@ -1227,7 +1820,12 @@
     "plateau"
    ],
    "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   },
   {
    "debut": "2027-07-21",
@@ -1238,6 +1836,11 @@
    "disciplines": [
     "p2550",
     "c50"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1248,6 +1851,11 @@
    "lieu": "Volmerange",
    "disciplines": [
     "silh"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1258,6 +1866,11 @@
    "lieu": "Châteauroux",
    "disciplines": [
     "plateau"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1268,6 +1881,11 @@
    "lieu": "Châteauroux",
    "disciplines": [
     "c300"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
    ]
   },
   {
@@ -1278,7 +1896,12 @@
    "disciplines": [
     "aa"
    ],
-   "dateAPreciser": true
+   "dateAPreciser": true,
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ]
   }
  ]
 }

@@ -30,6 +30,13 @@ DISCIPLINES = {"c10": "Carabine 10 m", "p10": "Pistolet 10 m", "arb": "Arbalète
                "aa": "Armes anciennes", "silh": "Silhouettes métalliques", "c300": "300 m et ISR",
                "plateau": "Plateau (fosse olympique)", "nc": "Non précisée"}
 
+# Catégories FFTir. L'École de tir regroupe les trois premières ; le calendrier
+# ne distingue pas Senior/Dame 1, 2 et 3.
+CATEGORIES = {"poussin": "Poussin", "benjamin": "Benjamin", "minime": "Minime",
+              "cadet": "Cadet", "junior": "Junior", "senior": "Senior / Dame"}
+ECOLE_DE_TIR = ["poussin", "benjamin", "minime"]
+CADET_ET_PLUS = ["cadet", "junior", "senior"]
+
 NOTE_REGIONAL = ("Fin de la période des championnats régionaux : les classements nationaux "
                  "établis sur les scores régionaux seront bientôt publiés.")
 
@@ -170,7 +177,16 @@ def disciplines(titre):
 
 
 def est_ecole_de_tir(titre):
-    return bool(re.search(r"EDTIR|AVENIR|JEUNES|ECOLES? DE TIR", sans_accents(titre).upper()))
+    return bool(re.search(r"EDTIR|AVENIR|ECOLES? DE TIR", sans_accents(titre).upper()))
+
+
+def categories(titre, ecole_de_tir):
+    """Règles fixées par le club : EdTir = poussin à minime ; tout le reste =
+    cadet à senior/dame ; une épreuve « adultes et EdTir » les réunit."""
+    t = sans_accents(titre).upper()
+    if ecole_de_tir and "ADULTE" in t:
+        return ECOLE_DE_TIR + CADET_ET_PLUS
+    return ECOLE_DE_TIR if ecole_de_tir else CADET_ET_PLUS
 
 
 def colonnes(page):
@@ -312,8 +328,10 @@ def extraire(chemin):
             if lieu_txt:
                 e["lieu"] = lieu_txt
             e["disciplines"] = disciplines(titre_brut)
-            if est_ecole_de_tir(titre_brut):
+            edt = est_ecole_de_tir(titre_brut)
+            if edt:
                 e["ecoleDeTir"] = True
+            e["categories"] = categories(titre_brut, edt)
             if limite:
                 e["type"] = "date-limite"
                 if regional_lim:
@@ -330,6 +348,7 @@ def extraire(chemin):
         "saison": saison,
         "miseAJour": maj,
         "niveaux": NIVEAUX,
+        "categories": CATEGORIES,
         "disciplines": DISCIPLINES,
         "evenements": evts,
     }, anomalies
