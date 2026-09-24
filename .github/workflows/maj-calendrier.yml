@@ -34,14 +34,17 @@ jobs:
         run: python scripts/maj.py
 
       - name: Publier
-        if: steps.maj.outputs.change == 'oui'
+        if: steps.maj.outputs.change == 'oui' || steps.maj.outputs.change == 'verifie'
         env:
           RESUME: ${{ steps.maj.outputs.resume }}
+          CHANGE: ${{ steps.maj.outputs.change }}
         run: |
           git config user.name "TMNH-2026"
           git config user.email "contacttmnh@gmail.com"
           git add -A calendrier.json source.json sources/
-          git commit -m "Nouveau calendrier de la ligue : $RESUME"
+          git diff --cached --quiet && exit 0
+          if [ "$CHANGE" = oui ]; then msg="Nouveau calendrier de la ligue : $RESUME"; else msg="Calendrier inchangé, $RESUME"; fi
+          git commit -m "$msg"
           git push origin HEAD:main
           git push --force origin HEAD:gh-pages
 

@@ -7,7 +7,7 @@ Mise à jour automatique du calendrier.
 3. S'il a changé : l'extrait, le contrôle, et écrit calendrier.json.
 
 Code de sortie : 0 = à jour ou mis à jour ; 1 = problème (rien n'est publié).
-Écrit dans $GITHUB_OUTPUT « change=oui|non » et « resume=… ».
+Écrit dans $GITHUB_OUTPUT « change=oui|verifie|non » et « resume=… ».
 """
 import datetime as dt
 import hashlib
@@ -76,8 +76,12 @@ def main():
     empreinte = hashlib.sha256(pdf).hexdigest()
     ancienne = json.loads(SOURCE.read_text(encoding="utf-8")) if SOURCE.exists() else {}
     if ancienne.get("sha256") == empreinte:
+        # Noter la vérification : la page l'affiche, et ce commit hebdomadaire
+        # évite que GitHub suspende le robot après 60 jours sans activité.
+        ancienne["verifieLe"] = dt.date.today().isoformat()
+        SOURCE.write_text(json.dumps(ancienne, ensure_ascii=False, indent=1), encoding="utf-8")
         print("Calendrier inchangé.")
-        sortie(change="non")
+        sortie(change="verifie", resume=f"vérifié le {ancienne['verifieLe']}")
         return 0
 
     tmp = RACINE / "sources" / "dernier.pdf"
@@ -98,7 +102,8 @@ def main():
     DONNEES.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     SOURCE.write_text(json.dumps({
         "pdf": url, "fichier": nom, "sha256": empreinte,
-        "recupereLe": dt.date.today().isoformat(), "miseAJourLigue": data.get("miseAJour"),
+        "recupereLe": dt.date.today().isoformat(), "verifieLe": dt.date.today().isoformat(),
+        "miseAJourLigue": data.get("miseAJour"),
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     tmp.rename(tmp.with_name(nom if nom.lower().endswith(".pdf") else nom + ".pdf"))
     resume = f"{nom} : {len(data['evenements'])} épreuves (ligue à jour au {data.get('miseAJour')})"

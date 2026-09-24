@@ -342,6 +342,11 @@ fetch('calendrier.json', { cache: 'no-cache' })
     }
     document.getElementById('src').textContent = 'Source : ' + d.source + '.';
     update();
+    return fetch('source.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(s => {
+      if (!s?.verifieLe) return;
+      const v = parse(s.verifieLe);
+      document.getElementById('src').textContent += ` Nouvelle version recherchée chaque semaine sur le site de la ligue, dernière vérification le ${v.getDate()} ${MOIS[v.getMonth()]} ${v.getFullYear()}.`;
+    }).catch(() => {});
   })
   .catch(() => {
     document.getElementById('list').innerHTML = '<p class="empty">Le calendrier n’a pas pu être chargé. Rechargez la page.</p>';
