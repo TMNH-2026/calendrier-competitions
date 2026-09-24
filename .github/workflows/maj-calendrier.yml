@@ -1,0 +1,66 @@
+# Chaque lundi matin, vérifie si la ligue a publié une nouvelle version du
+# calendrier et, si oui, met la page à jour. Lançable aussi à la main :
+# onglet Actions > « Mise à jour du calendrier » > Run workflow.
+name: Mise à jour du calendrier
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"   # lundi 5 h UTC (6 h ou 7 h à Lille)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: maj-calendrier
+  cancel-in-progress: false
+
+jobs:
+  maj:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pymupdf==1.24.14
+
+      - id: maj
+        run: python scripts/maj.py
+
+      - name: Publier
+        if: steps.maj.outputs.change == 'oui'
+        env:
+          RESUME: ${{ steps.maj.outputs.resume }}
+        run: |
+          git config user.name "TMNH-2026"
+          git config user.email "contacttmnh@gmail.com"
+          git add -A calendrier.json source.json sources/
+          git commit -m "Nouveau calendrier de la ligue : $RESUME"
+          git push origin HEAD:main
+          git push --force origin HEAD:gh-pages
+
+      - name: Signaler l'échec
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESUME: ${{ steps.maj.outputs.resume }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          titre="La mise à jour automatique du calendrier a échoué"
+          if gh issue list --state open --search "$titre in:title" --json number --jq '.[0].number' | grep -q .; then
+            echo "Un ticket est déjà ouvert."
+          else
+            gh issue create --title "$titre" --body "Rien n'a été publié : la page affiche toujours la version précédente.
+
+          **Cause :** ${RESUME:-voir le journal}
+
+          Journal : $RUN
+
+          Probablement une mise en page du PDF, un nom de fichier ou une page de la ligue qui a changé. Transmettre le nouveau PDF pour ajuster le programme de lecture."
+          fi
