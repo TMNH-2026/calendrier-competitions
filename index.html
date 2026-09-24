@@ -22,6 +22,7 @@
   --n-match: #A51E23; --n-match-bg: #FFF0F0;
   --n-tournoi: #5C5450; --n-tournoi-bg: #EEECEB;
   --edtir: #235BA0;
+  --red: #C8272D;
   --font-heading: 'Oswald', 'Arial Narrow', sans-serif;
   --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
@@ -39,6 +40,7 @@
     --n-match: #FFA9AC; --n-match-bg: #5A0D10;
     --n-tournoi: #DDD9D6; --n-tournoi-bg: #403B38;
     --edtir: #A9CBEC;
+    --red: #F77277;
   }
 }
 :root[data-theme="dark"] {
@@ -53,6 +55,7 @@
   --n-match: #FFA9AC; --n-match-bg: #5A0D10;
   --n-tournoi: #DDD9D6; --n-tournoi-bg: #403B38;
   --edtir: #A9CBEC;
+  --red: #F77277;
 }
 *, *::before, *::after { box-sizing: border-box; }
 body {
@@ -158,8 +161,13 @@ ol.events { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 
 .cats { margin: 4px 0 0; font-size: 13px; color: var(--text-2); }
 .cats::before { content: "Catégories : "; color: var(--muted); }
-.ev.limite { background: transparent; border-style: dashed; border-left-style: solid; }
-.ev.limite h3 { font-weight: 500; }
+/* Clôtures et échéances : une simple ligne rouge, comme dans le PDF de la ligue */
+.lim {
+  display: flex; align-items: baseline; gap: 10px; padding: 4px 2px 4px 14px;
+  border-left: 4px solid var(--red); color: var(--red); font-size: 14px; line-height: 1.4;
+}
+.lim .d { flex: none; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; }
+.lim.past { opacity: .55; }
 .ev .note { font-size: 14px; color: var(--text-2); margin: 4px 0 0; }
 
 .empty { margin-top: 40px; text-align: center; color: var(--text-2); }
@@ -381,6 +389,12 @@ function renderList() {
     for (const e of items) {
       const li = document.createElement('li');
       const isLim = e.type === 'date-limite';
+      if (isLim) {
+        const d = parse(e.debut);
+        li.className = 'lim' + (d < today ? ' past' : '');
+        li.innerHTML = `<span class="d">${JOURS[d.getDay()]}. ${d.getDate()}</span><span>${esc(e.titre)}</span>`;
+        ol.append(li); continue;
+      }
       li.className = 'ev' + (isLim ? ' limite' : '') + (parse(e.fin || e.debut) < today ? ' past' : '');
       li.style.setProperty('--c', `var(--n-${e.niveau})`); li.style.setProperty('--cbg', `var(--n-${e.niveau}-bg)`);
       li.append(dateBlock(e));
