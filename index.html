@@ -82,9 +82,21 @@ h1 {
 }
 .frow { display: flex; gap: 8px; align-items: center; min-width: 0; }
 .flabel {
-  flex: none; width: 82px; font-size: 12px; font-weight: 700;
+  flex: none; width: 82px; margin: 0; font: 700 12px/1.3 var(--font-body);
   text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
 }
+.panel { display: grid; gap: 10px; }
+.panel-head, .panel-foot, .fbtn { display: none; }
+.bar { display: flex; gap: 8px; }
+.checks { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.active { display: none; flex-wrap: wrap; gap: 6px; }
+.tag {
+  display: inline-flex; align-items: center; gap: 6px; font: 500 13px/1 var(--font-body);
+  color: var(--text); background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: 999px; padding: 6px 8px 6px 10px; cursor: pointer; min-height: 32px;
+}
+.tag span { color: var(--muted); font-size: 12px; }
+.tag:hover span { color: var(--text); }
 .chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-block: 2px; min-width: 0; }
 .chips::-webkit-scrollbar { display: none; }
 .chip {
@@ -100,7 +112,6 @@ h1 {
 .chip.edtir-chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 
-.tools { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
 .search {
   flex: 1 1 200px; min-width: 0; font: 400 15px var(--font-body); color: var(--text);
   background: var(--surface); border: 1px solid var(--border-strong); border-radius: 8px;
@@ -164,10 +175,48 @@ dd { margin: 0; color: var(--text-2); }
 @media (min-width: 721px) and (min-height: 700px) {
   .filters { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
 }
+/* Téléphone : barre compacte + panneau de filtres plein écran */
+@media (max-width: 720px) {
+  .active:not([hidden]) { display: flex; }
+  .fbtn {
+    display: inline-flex; align-items: center; gap: 6px; flex: none;
+    font: 700 15px var(--font-body); color: var(--chip-on-text); background: var(--chip-on-bg);
+    border: 0; border-radius: 8px; padding: 0 14px; min-height: 44px; cursor: pointer;
+  }
+  .badge {
+    font: 500 12px/1 var(--font-mono); background: var(--gold); color: #1A1614;
+    border-radius: 999px; padding: 3px 6px; margin-left: 2px;
+  }
+  .search { min-height: 44px; font-size: 16px; }
+  .panel {
+    position: fixed; inset: 0; z-index: 20; background: var(--bg);
+    overflow-y: auto; overscroll-behavior: contain; align-content: start; gap: 0;
+    padding: calc(env(safe-area-inset-top, 0px) + 8px) 16px 0;
+  }
+  .panel:not(.open) { display: none; }
+  .panel-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-block: 8px 12px; border-bottom: 1px solid var(--border);
+  }
+  .panel-head h2 { font: 600 22px/1.2 var(--font-heading); margin: 0; }
+  .close { font-size: 20px; color: var(--text); background: none; border: 0; width: 44px; height: 44px; cursor: pointer; }
+  .panel .frow { flex-direction: column; align-items: stretch; gap: 10px; padding-block: 18px; border-bottom: 1px solid var(--border); }
+  .panel .flabel { width: auto; font-size: 13px; color: var(--text-2); }
+  .chips { flex-wrap: wrap; overflow-x: visible; gap: 8px; }
+  .chip { min-height: 40px; font-size: 15px; }
+  .checks { flex-direction: column; gap: 14px; }
+  .check { font-size: 15px; color: var(--text); }
+  .panel-foot {
+    display: flex; gap: 10px; position: sticky; bottom: 0;
+    background: var(--bg); border-top: 1px solid var(--border);
+    padding: 12px 0 calc(env(safe-area-inset-bottom, 0px) + 12px);
+  }
+  .panel-foot button { flex: 1; min-height: 48px; border-radius: 8px; font: 700 15px var(--font-body); cursor: pointer; }
+  .panel-foot .primary { flex: 2; background: var(--blue); color: #fff; border: 0; }
+  .panel-foot .ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border-strong); }
+  body.panel-open { overflow: hidden; }
+}
 @media (max-width: 520px) {
-  .flabel { display: none; }
-  .chips { flex-wrap: wrap; overflow-x: visible; }
-  .frow { flex-direction: column; align-items: stretch; }
   .ev { grid-template-columns: 52px 1fr; gap: 10px; }
   .date .num { font-size: 19px; }
 }
@@ -185,17 +234,33 @@ dd { margin: 0; color: var(--text-2); }
   </header>
 
   <div class="filters" id="filters">
-    <div class="frow"><span class="flabel">Catégorie</span>
-      <div class="chips" id="f-cat"></div></div>
-    <div class="frow"><span class="flabel">Niveau</span>
-      <div class="chips" id="f-niveau"></div></div>
-    <div class="frow"><span class="flabel">Discipline</span>
-      <div class="chips" id="f-disc"></div></div>
-    <div class="tools">
-      <input class="search" id="f-q" type="search" placeholder="Rechercher un lieu, un tournoi…" aria-label="Rechercher un lieu ou un tournoi">
-      <label class="check"><input type="checkbox" id="f-past" checked> Masquer les dates passées</label>
-      <label class="check"><input type="checkbox" id="f-lim" checked> Clôtures et échéances</label>
+    <div class="bar">
+      <input class="search" id="f-q" type="search" placeholder="Lieu, tournoi…" aria-label="Rechercher un lieu ou un tournoi">
+      <button class="fbtn" id="open-panel" type="button" aria-controls="panel" aria-expanded="false">
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M3 5h14M6 10h8M8.5 15h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        Filtres<span class="badge" id="nf" hidden></span>
+      </button>
     </div>
+    <div class="panel" id="panel" aria-labelledby="panel-titre">
+      <div class="panel-head">
+        <h2 id="panel-titre">Filtres</h2>
+        <button class="close" id="close-panel" type="button" aria-label="Fermer les filtres">✕</button>
+      </div>
+      <div class="frow"><h3 class="flabel">Catégorie</h3><div class="chips" id="f-cat"></div></div>
+      <div class="frow"><h3 class="flabel">Niveau</h3><div class="chips" id="f-niveau"></div></div>
+      <div class="frow"><h3 class="flabel">Discipline</h3><div class="chips" id="f-disc"></div></div>
+      <div class="frow"><h3 class="flabel">Affichage</h3>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="f-past" checked> Masquer les dates passées</label>
+          <label class="check"><input type="checkbox" id="f-lim" checked> Clôtures et échéances</label>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <button class="ghost" id="clear-panel" type="button">Tout effacer</button>
+        <button class="primary" id="apply-panel" type="button">Voir les résultats</button>
+      </div>
+    </div>
+    <div class="active" id="active" hidden></div>
     <div class="status"><span id="count"></span><button class="reset" id="reset" type="button">Tout afficher</button></div>
   </div>
 
@@ -301,8 +366,9 @@ function renderList() {
   const list = document.getElementById('list');
   const rows = DATA.evenements.filter(matches);
   const nEp = rows.filter(e => e.type !== 'date-limite').length, nLim = rows.length - nEp;
+  document.getElementById('apply-panel').textContent = nEp ? `Voir ${nEp > 1 ? 'les ' + nEp + ' épreuves' : "l’épreuve"}` : 'Aucune épreuve';
   document.getElementById('count').innerHTML = `<strong>${nEp}</strong> épreuve${nEp > 1 ? 's' : ''}` + (nLim ? ` · <strong>${nLim}</strong> échéance${nLim > 1 ? 's' : ''}` : '');
-  const dirty = state.cats.size || state.niveaux.size || state.disc.size || state.q || !state.limites;
+  const dirty = !state.hidePast || state.cats.size || state.niveaux.size || state.disc.size || state.q || !state.limites;
   document.getElementById('reset').hidden = !dirty;
   if (!rows.length) {
     list.innerHTML = `<p class="empty">Aucune compétition ne correspond à ces filtres.<br>Retirez un filtre ou décochez « Masquer les dates passées ».</p>`;
@@ -335,15 +401,47 @@ function renderList() {
   }));
 }
 
-function update() { renderFilters(); renderList(); }
+// Filtres actifs, rappelés sous la barre sur téléphone ; une croix les retire.
+function renderActive() {
+  const box = document.getElementById('active');
+  const tags = [];
+  const tag = (label, off) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'tag';
+    b.setAttribute('aria-label', `Retirer le filtre ${label}`); b.append(label); const x = document.createElement('span'); x.textContent = '✕'; b.append(x);
+    b.addEventListener('click', () => { off(); update(); }); tags.push(b); };
+  const cats = new Set(state.cats);
+  if (EDT.every(c => cats.has(c))) { tag('École de tir', () => EDT.forEach(c => state.cats.delete(c))); EDT.forEach(c => cats.delete(c)); }
+  cats.forEach(c => tag(DATA.categories[c], () => state.cats.delete(c)));
+  state.niveaux.forEach(k => tag(DATA.niveaux[k], () => state.niveaux.delete(k)));
+  state.disc.forEach(k => tag(DATA.disciplines[k], () => state.disc.delete(k)));
+  if (!state.limites) tag('Sans les échéances', () => { state.limites = true; document.getElementById('f-lim').checked = true; });
+  if (!state.hidePast) tag('Dates passées incluses', () => { state.hidePast = true; document.getElementById('f-past').checked = true; });
+  box.replaceChildren(...tags); box.hidden = !tags.length;
+  const n = tags.length, nf = document.getElementById('nf');
+  nf.textContent = n; nf.hidden = !n;
+}
+
+function update() { renderFilters(); renderList(); renderActive(); }
+
+const panel = document.getElementById('panel'), openBtn = document.getElementById('open-panel');
+function setPanel(open) {
+  panel.classList.toggle('open', open); document.body.classList.toggle('panel-open', open);
+  openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if (open) document.getElementById('close-panel').focus(); else openBtn.focus();
+}
+openBtn.addEventListener('click', () => setPanel(true));
+document.getElementById('close-panel').addEventListener('click', () => setPanel(false));
+document.getElementById('apply-panel').addEventListener('click', () => { setPanel(false); document.getElementById('filters').scrollIntoView({ block: 'start' }); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('open')) setPanel(false); });
 
 document.getElementById('f-q').addEventListener('input', e => { state.q = e.target.value.trim(); renderList(); });
-document.getElementById('f-past').addEventListener('change', e => { state.hidePast = e.target.checked; renderList(); });
-document.getElementById('f-lim').addEventListener('change', e => { state.limites = e.target.checked; renderList(); });
-document.getElementById('reset').addEventListener('click', () => {
-  Object.assign(state, { q: '', limites: true }); state.cats.clear(); state.niveaux.clear(); state.disc.clear();
-  document.getElementById('f-q').value = ''; document.getElementById('f-lim').checked = true; update();
-});
+document.getElementById('f-past').addEventListener('change', e => { state.hidePast = e.target.checked; renderList(); renderActive(); });
+document.getElementById('f-lim').addEventListener('change', e => { state.limites = e.target.checked; renderList(); renderActive(); });
+const toutEffacer = () => {
+  Object.assign(state, { q: '', limites: true, hidePast: true }); state.cats.clear(); state.niveaux.clear(); state.disc.clear();
+  document.getElementById('f-q').value = ''; document.getElementById('f-lim').checked = true; document.getElementById('f-past').checked = true; update();
+};
+document.getElementById('reset').addEventListener('click', toutEffacer);
+document.getElementById('clear-panel').addEventListener('click', toutEffacer);
 if (location.hash === '#ecole-de-tir') EDT.forEach(c => state.cats.add(c));
 fetch('calendrier.json', { cache: 'no-cache' })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
