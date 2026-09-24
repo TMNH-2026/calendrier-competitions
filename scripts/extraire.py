@@ -190,6 +190,9 @@ def categories(titre, ecole_de_tir):
     if "INTERLIGUE" in t and "JEUNE" in t:
         # Challenge jeunes interligues FFTir : équipes de minimes et cadets.
         return ["minime", "cadet"]
+    if re.search(r"TOURNOI (DU )?NORD 10 ?M", t) and "FINALE" not in t:
+        # Tournoi Nord 10 m : minimes admis aux tours, pas à la finale.
+        return ["minime"] + CADET_ET_PLUS
     if ecole_de_tir and "ADULTE" in t:
         return ECOLE_DE_TIR + CADET_ET_PLUS
     return ECOLE_DE_TIR if ecole_de_tir else CADET_ET_PLUS
