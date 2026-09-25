@@ -1,7 +1,7 @@
 # Calendrier des compétitions de la ligue
 
 Calendrier prévisionnel de la ligue de tir Nord/Pas-de-Calais, filtrable par
-public (École de tir), niveau et discipline. Mis en forme par le Tir Métropole
+catégorie, type d'épreuve et discipline. Mis en forme par le Tir Métropole
 Nord Haubourdin.
 
 Page publique : https://calendrier.tmnh.fr/
