@@ -4,7 +4,11 @@ Calendrier prévisionnel de la ligue de tir Nord/Pas-de-Calais, filtrable par
 public (École de tir), niveau et discipline. Mis en forme par le Tir Métropole
 Nord Haubourdin.
 
-Page publique : https://tmnh-2026.github.io/calendrier-competitions/
+Page publique : https://calendrier.tmnh.fr/
+
+Le fichier `CNAME` porte ce sous-domaine (entrée CNAME chez OVH vers
+`tmnh-2026.github.io.`). Il doit rester sur `main` : le robot republie
+`main` sur `gh-pages`.
 
 ## Mise à jour automatique
 
