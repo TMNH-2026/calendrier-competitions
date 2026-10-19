@@ -1,9 +1,8 @@
 {
- "pdf": "https://www.liguedetirnpdc.fr/wp-content/uploads/2026-2027-CALENDRIER-GS-NPDC-V4-.pdf",
- "fichier": "2026-2027-CALENDRIER-GS-NPDC-V4-.pdf",
- "sha256": "03f6f01cbcf13b83e88bd7c97bb6581ee55ba32b1b5603c04b7361b117a89159",
- "recupereLe": "2026-09-24",
- "miseAJourLigue": "2026-09-17",
- "remarque": "Version 4 saisie et relue à la main ; les versions suivantes sont extraites automatiquement.",
- "verifieLe": "2026-10-12"
+ "pdf": "https://www.liguedetirnpdc.fr/wp-content/uploads/2026-2027-CALENDRIER-GS-NPDC-V5-2.pdf",
+ "fichier": "2026-2027-CALENDRIER-GS-NPDC-V5-2.pdf",
+ "sha256": "655c85c0780dabbfae415794811f1e3f62f6530307e131db10684f1a422c0630",
+ "recupereLe": "2026-10-19",
+ "verifieLe": "2026-10-19",
+ "miseAJourLigue": "2026-10-15"
 }

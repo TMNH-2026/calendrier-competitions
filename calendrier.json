@@ -1,7 +1,7 @@
 {
- "source": "Ligue de tir Nord/Pas-de-Calais — calendrier prévisionnel des activités sportives, saison 2026/2027 (version 4, à jour au 17/09/2026)",
+ "source": "Ligue de tir Nord/Pas-de-Calais — calendrier prévisionnel des activités sportives, saison 2026/2027 (à jour au 15/10/2026)",
  "saison": "2026-2027",
- "miseAJour": "2026-09-17",
+ "miseAJour": "2026-10-15",
  "niveaux": {
   "france": "France",
   "regional": "Régional",
@@ -72,7 +72,7 @@
    "fin": "2026-09-20",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France fosse olympique",
+   "titre": "Championnat de France Fosse Olympique",
    "lieu": "Cernay",
    "disciplines": [
     "plateau"
@@ -103,7 +103,7 @@
    "debut": "2026-09-19",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Pléiade, finale",
+   "titre": "Pléiade finale",
    "lieu": "Jeumont",
    "disciplines": [
     "nc"
@@ -134,7 +134,7 @@
    "debut": "2026-09-26",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Pléiade, finale",
+   "titre": "Pléiade finale",
    "lieu": "Jeumont",
    "disciplines": [
     "nc"
@@ -166,7 +166,7 @@
    "fin": "2026-09-27",
    "niveau": "match",
    "famille": "championnat",
-   "titre": "Match armes anciennes des ligues Lorraine, Nord-Pas-de-Calais et Picardie",
+   "titre": "Match AA ligues Lorraine - NPdC - Picardie",
    "lieu": "Volmerange",
    "disciplines": [
     "aa"
@@ -266,7 +266,7 @@
    "niveau": "tournoi",
    "famille": "tournoi",
    "titre": "Tournoi Nord 10 m, 2e tour",
-   "lieu": "Suivant zones : Cappelle-la-Grande / UTVA / Aulnoye",
+   "lieu": "Suivant zones : Cappelle-la-Grande / UTVA / Aulnoye-Aymeries",
    "disciplines": [
     "c10",
     "p10"
@@ -300,7 +300,7 @@
    "niveau": "tournoi",
    "famille": "tournoi",
    "titre": "Challenge de l'Avenir Nord, 1er tour",
-   "lieu": "Suivant zones : Cappelle / La Madeleine / Aulnoye",
+   "lieu": "Suivant zones : Cappelle / La Madeleine / Aulnoye-Aymeries",
    "disciplines": [
     "c10",
     "p10"
@@ -400,7 +400,7 @@
    "fin": "2026-11-29",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Nord pistolet 10 m, pistolet vitesse et pistolet standard 10 m",
+   "titre": "Championnat départemental Nord P10/PV et P Std10 m",
    "lieu": "Wattrelos",
    "disciplines": [
     "p10"
@@ -450,7 +450,7 @@
    "debut": "2026-11-29",
    "niveau": "match",
    "famille": "championnat",
-   "titre": "Match France – Belgique 10 m",
+   "titre": "Match France - Belgique 10 m",
    "lieu": "Zwevegem (Belgique)",
    "disciplines": [
     "c10",
@@ -467,11 +467,11 @@
    "fin": "2026-12-06",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Nord carabine 10 m et arbalète match 10 m",
+   "titre": "Championnat départemental Nord C10/AM10 m",
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
-    "c10",
-    "arb"
+    "arb",
+    "c10"
    ],
    "categories": [
     "cadet",
@@ -483,7 +483,7 @@
    "debut": "2026-12-06",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais de la Coupe de France des clubs École de tir",
+   "titre": "Championnat départemental PdC du CdFC EdTir",
    "lieu": "Arques",
    "disciplines": [
     "c10",
@@ -500,7 +500,7 @@
    "debut": "2026-12-12",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Nord arbalète field 18 m",
+   "titre": "Championnat départemental Nord Arbalète Field 18 m",
    "lieu": "Boussois",
    "disciplines": [
     "arb"
@@ -516,12 +516,12 @@
    "fin": "2026-12-13",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais carabine et pistolet 10 m (C10, P10, PV10, PStd10) et arbalète field 18 m",
+   "titre": "Championnat départemental PdC C10/P10/PV10 m/ PStd10 m et Arbalète Field 18 m",
    "lieu": "Bully-les-Mines",
    "disciplines": [
+    "arb",
     "c10",
-    "p10",
-    "arb"
+    "p10"
    ],
    "categories": [
     "cadet",
@@ -551,7 +551,7 @@
    "debut": "2026-12-13",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Nord de la Coupe de France des clubs École de tir",
+   "titre": "Championnat départemental Nord du CdFC EdTir",
    "lieu": "Wattrelos",
    "disciplines": [
     "c10",
@@ -569,7 +569,7 @@
    "fin": "2026-12-20",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Départemental Nord de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)",
+   "titre": "Départemental Nord du CdFC 10 m (samedi C10 et dimanche P10)",
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c10",
@@ -586,29 +586,11 @@
    "fin": "2026-12-20",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Départemental Pas-de-Calais de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)",
+   "titre": "Départemental PdC du CdFC 10 m (samedi C10 et dimanche P10)",
    "lieu": "Carvin",
    "disciplines": [
     "c10",
     "p10"
-   ],
-   "categories": [
-    "cadet",
-    "junior",
-    "senior"
-   ]
-  },
-  {
-   "debut": "2027-01-02",
-   "fin": "2027-01-03",
-   "niveau": "regional",
-   "famille": "championnat",
-   "titre": "Championnat régional carabine, pistolet et arbalète 10 m / 18 m (C10, AM10, P10, PV, PStd10, AF18)",
-   "lieu": "Bully-les-Mines",
-   "disciplines": [
-    "c10",
-    "p10",
-    "arb"
    ],
    "categories": [
     "cadet",
@@ -651,33 +633,52 @@
    ]
   },
   {
+   "debut": "2027-01-09",
+   "fin": "2027-01-10",
+   "niveau": "tournoi",
+   "famille": "championnat",
+   "titre": "Championnat régional NPdC C10/AM10/P10/PV et P Std10/AF18",
+   "lieu": "Bully-les-Mines",
+   "disciplines": [
+    "arb",
+    "c10",
+    "p10"
+   ],
+   "categories": [
+    "cadet",
+    "junior",
+    "senior"
+   ],
+   "type": "date-limite"
+  },
+  {
    "debut": "2027-01-10",
    "niveau": "regional",
    "famille": "championnat",
    "titre": "Clôture des championnats régionaux 10 m et 18 m",
    "disciplines": [
+    "arb",
     "c10",
-    "p10",
-    "arb"
+    "p10"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-01-16",
    "niveau": "match",
    "famille": "championnat",
-   "titre": "Match Nord-Pas-de-Calais – Picardie 10 m / 18 m",
+   "titre": "Match NPdC - Picardie 10 m/18 m",
    "lieu": "Bully-les-Mines",
    "disciplines": [
+    "arb",
     "c10",
-    "p10",
-    "arb"
+    "p10"
    ],
    "categories": [
     "cadet",
@@ -705,7 +706,7 @@
    "debut": "2027-01-17",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Régionaux de la Coupe de France des clubs École de tir",
+   "titre": "Régionaux du CdFC EdTir",
    "lieu": "Longuenesse",
    "disciplines": [
     "c10",
@@ -722,7 +723,7 @@
    "debut": "2027-01-23",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Finale du Tournoi Nord 10 m",
+   "titre": "Finale du tournoi Nord 10 m",
    "lieu": "Douai",
    "disciplines": [
     "c10",
@@ -757,7 +758,7 @@
    "fin": "2027-01-31",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Régionaux de la Coupe de France des clubs 10 m (samedi carabine, dimanche pistolet)",
+   "titre": "Régionaux du CdFC 10 m (Samedi C10 m - Dimanche P10 m)",
    "lieu": "Arques",
    "disciplines": [
     "c10",
@@ -773,14 +774,12 @@
    "debut": "2027-01-31",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Clôture des régionaux de la Coupe de France des clubs 10 m, adultes et École de tir",
+   "titre": "Clôture des régionaux des CdFC 10 m adultes et EdTir",
    "disciplines": [
     "c10",
     "p10"
    ],
    "ecoleDeTir": true,
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "poussin",
     "benjamin",
@@ -788,7 +787,9 @@
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-02-06",
@@ -811,12 +812,12 @@
    "fin": "2027-02-13",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France 10 m / 18 m : carabine, pistolet, pistolet standard, pistolet vitesse, arbalète match 10 m et arbalète field 18 m",
+   "titre": "Championnat de France carabine/pistolet/pst std/pst v/am10 m et af18 m",
    "lieu": "Châlons-en-Champagne",
    "disciplines": [
+    "arb",
     "c10",
-    "p10",
-    "arb"
+    "p10"
    ],
    "categories": [
     "cadet",
@@ -880,16 +881,16 @@
    "debut": "2027-02-25",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Envoi des résultats du 1er tour du match postal RimFire Nord",
+   "titre": "Date limite d'envoi des résultats du 1er tour match postal RimFire Nord",
    "disciplines": [
     "rimfire"
    ],
-   "type": "date-limite",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite"
   },
   {
    "debut": "2027-02-27",
@@ -930,7 +931,7 @@
    "fin": "2027-03-07",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Nord École de tir",
+   "titre": "Championnat départemental Nord EdTir",
    "lieu": "Wattrelos",
    "disciplines": [
     "c10",
@@ -948,7 +949,7 @@
    "fin": "2027-03-07",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais École de tir",
+   "titre": "Championnat départemental PdC EdTir",
    "lieu": "Arques",
    "disciplines": [
     "c10",
@@ -982,7 +983,7 @@
    "fin": "2027-03-14",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Coupe de France des clubs carabine et pistolet 10 m, adultes et École de tir",
+   "titre": "CdFC carabine pistolet 10 m adultes et EdTir",
    "lieu": "Narbonne",
    "disciplines": [
     "c10",
@@ -1038,7 +1039,7 @@
    "fin": "2027-03-21",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Tournoi du Nord pistolet 25 m, 1er tour",
+   "titre": "Tournoi du Nord P25, 1er tour",
    "lieu": "Suivant zones : Jean Bart / Ronchin / Le Cateau",
    "disciplines": [
     "p2550"
@@ -1086,7 +1087,7 @@
    "fin": "2027-03-21",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Nord armes anciennes",
+   "titre": "Championnat départemental Nord Armes Anciennes",
    "lieu": "Maubeuge",
    "disciplines": [
     "aa"
@@ -1118,16 +1119,16 @@
    "debut": "2027-03-25",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Envoi des résultats du 2e tour du match postal RimFire Nord",
+   "titre": "Date limite d'envoi des résultats du 2e tour match postal RimFire Nord",
    "disciplines": [
     "rimfire"
    ],
-   "type": "date-limite",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite"
   },
   {
    "debut": "2027-03-27",
@@ -1148,7 +1149,7 @@
    "debut": "2027-03-27",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais RimFire",
+   "titre": "Championnat départemental PdC RimFire",
    "lieu": "Saint-Martin-au-Laërt",
    "disciplines": [
     "rimfire"
@@ -1164,7 +1165,7 @@
    "fin": "2027-03-28",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnats régionaux Nord et Pas-de-Calais École de tir",
+   "titre": "Championnats régionaux Nord et PdC EdTir",
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "c10",
@@ -1197,7 +1198,7 @@
    "debut": "2027-04-04",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais TAR 25-50 m",
+   "titre": "Championnat départemental PdC TAR 25-50 m",
    "lieu": "Billy-Montigny",
    "disciplines": [
     "tar"
@@ -1212,19 +1213,19 @@
    "debut": "2027-04-04",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Clôture des championnats régionaux École de tir",
+   "titre": "Clôture des championnats régionaux des EdTir",
    "disciplines": [
     "c10",
     "p10"
    ],
    "ecoleDeTir": true,
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "poussin",
     "benjamin",
     "minime"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-04-10",
@@ -1247,7 +1248,7 @@
    "fin": "2027-04-11",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Tournoi du Nord pistolet 25 m, 2e tour",
+   "titre": "Tournoi du Nord P25, 2e tour",
    "lieu": "Suivant zones : CTPN / Douai / Trith-Saint-Léger",
    "disciplines": [
     "p2550"
@@ -1262,7 +1263,7 @@
    "debut": "2027-04-10",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Nord arbalète field IR900",
+   "titre": "Championnat départemental Nord IR900",
    "lieu": "Boussois",
    "disciplines": [
     "arb"
@@ -1277,7 +1278,7 @@
    "debut": "2027-04-10",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais arbalète field IR900",
+   "titre": "Championnat départemental PdC IR900",
    "lieu": "Carvin",
    "disciplines": [
     "arb"
@@ -1292,7 +1293,7 @@
    "debut": "2027-04-11",
    "niveau": "match",
    "famille": "championnat",
-   "titre": "Match France – Belgique 25 m / 50 m",
+   "titre": "France - Belgique 25 m - 50 m",
    "disciplines": [
     "p2550",
     "c50"
@@ -1307,7 +1308,7 @@
    "debut": "2027-04-17",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Finale régionale du Challenge de l'Avenir",
+   "titre": "Finale régionale Challenge de l'Avenir",
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "c10",
@@ -1324,7 +1325,7 @@
    "debut": "2027-04-17",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnats régionaux Nord et Pas-de-Calais RimFire",
+   "titre": "Championnats régionaux Nord et PdC RimFire",
    "lieu": "Saint-Martin-au-Laërt",
    "disciplines": [
     "rimfire"
@@ -1340,7 +1341,7 @@
    "fin": "2027-04-18",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional armes anciennes",
+   "titre": "Championnat régional NPdC Armes Anciennes",
    "lieu": "Jeumont",
    "disciplines": [
     "aa"
@@ -1356,7 +1357,7 @@
    "fin": "2027-04-18",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnats départementaux Nord et Pas-de-Calais TAR 200 m",
+   "titre": "Championnats départementaux Nord et PdC TAR 200 m",
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "tar"
@@ -1375,28 +1376,28 @@
    "disciplines": [
     "rimfire"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-04-22",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Envoi des résultats du 3e tour du match postal RimFire Nord",
+   "titre": "Date limite d'envoi des résultats du 3e tour match postal RimFire Nord",
    "disciplines": [
     "rimfire"
    ],
-   "type": "date-limite",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite"
   },
   {
    "debut": "2027-04-24",
@@ -1433,7 +1434,7 @@
    "debut": "2027-04-25",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais pistolet vitesse 25 m",
+   "titre": "Championnat départemental PdC pistolet vitesse 25 m",
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "p2550"
@@ -1465,7 +1466,7 @@
    "fin": "2027-05-02",
    "niveau": "departemental",
    "famille": "championnat",
-   "titre": "Championnat départemental Pas-de-Calais 25 m et 50 m",
+   "titre": "Championnat départemental PdC 25 m - 50 m",
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "p2550",
@@ -1481,7 +1482,7 @@
    "debut": "2027-05-01",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional arbalète field IR900",
+   "titre": "Championnat régional NPdC IR900",
    "lieu": "Boussois",
    "disciplines": [
     "arb"
@@ -1500,13 +1501,13 @@
    "disciplines": [
     "arb"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-05-02",
@@ -1516,20 +1517,20 @@
    "disciplines": [
     "aa"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-05-06",
    "fin": "2027-05-07",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France des Écoles de tir",
+   "titre": "Championnat de France des EdTir",
    "lieu": "Châteauroux",
    "disciplines": [
     "c10",
@@ -1547,7 +1548,7 @@
    "fin": "2027-05-09",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional TAR 25-50 m",
+   "titre": "Championnat régional NPdC TAR 25 - 50 m",
    "disciplines": [
     "tar"
    ],
@@ -1561,7 +1562,7 @@
    "debut": "2027-05-15",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Finale du Tournoi RimFire",
+   "titre": "Finale tournoi RimFire",
    "lieu": "Douai",
    "disciplines": [
     "rimfire"
@@ -1592,7 +1593,7 @@
    "fin": "2027-05-16",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional TAR 200 m",
+   "titre": "Championnat régional NPdC TAR 200 m",
    "lieu": "Bully-les-Mines",
    "disciplines": [
     "tar"
@@ -1608,7 +1609,7 @@
    "fin": "2027-05-23",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Tournoi du Nord pistolet 25 m, 3e tour",
+   "titre": "Tournoi du Nord P25, 3e tour",
    "lieu": "Suivant zones : Cappelle / UTVA / Onnaing",
    "disciplines": [
     "p2550"
@@ -1659,36 +1660,36 @@
    "disciplines": [
     "arb"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-05-23",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Clôture des championnats régionaux TAR (armes réglementaires)",
+   "titre": "Clôture des championnats régionaux tir armes réglementaires",
    "disciplines": [
     "tar"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-05-27",
    "fin": "2027-05-30",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France RimFire",
+   "titre": "Championnat de France Rimfire",
    "lieu": "Châteauroux",
    "disciplines": [
     "rimfire"
@@ -1704,7 +1705,7 @@
    "fin": "2027-05-30",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional pistolet 25 m et 50 m",
+   "titre": "Championnat régional NPdC Pistolet 25 - 50 m",
    "lieu": "La Madeleine",
    "disciplines": [
     "p2550"
@@ -1720,7 +1721,7 @@
    "fin": "2027-05-30",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional carabine 50 m",
+   "titre": "Championnat régional NPdC Carabine 50 m",
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
@@ -1752,7 +1753,7 @@
    "fin": "2027-06-06",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional pistolet 25 m et 50 m",
+   "titre": "Championnat régional NPdC Pistolet 25 - 50 m",
    "lieu": "La Madeleine",
    "disciplines": [
     "p2550"
@@ -1767,7 +1768,7 @@
    "debut": "2027-06-05",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional carabine 50 m",
+   "titre": "Championnat régional NPdC Carabine 50 m",
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
@@ -1783,7 +1784,7 @@
    "fin": "2027-06-13",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France armes anciennes",
+   "titre": "Championnat de France Armes Anciennes",
    "lieu": "Volmerange",
    "disciplines": [
     "aa"
@@ -1798,7 +1799,7 @@
    "debut": "2027-06-12",
    "niveau": "tournoi",
    "famille": "tournoi",
-   "titre": "Finale du Tournoi Nord carabine 50 m",
+   "titre": "Finale tournoi Nord carabine 50 m",
    "lieu": "Villeneuve-d'Ascq",
    "disciplines": [
     "c50"
@@ -1814,7 +1815,7 @@
    "fin": "2027-06-13",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Championnat régional silhouettes métalliques",
+   "titre": "Championnat régional NPdC Silhouettes métalliques",
    "lieu": "Nesles",
    "disciplines": [
     "silh"
@@ -1829,18 +1830,18 @@
    "debut": "2027-06-13",
    "niveau": "regional",
    "famille": "championnat",
-   "titre": "Clôture des championnats régionaux carabine 50 m, pistolet 25/50 m et Coupe de France des clubs 25/50 m",
+   "titre": "Clôture des championnats régionaux carabine 50 m - pistolet 25/50 m et CdFC 25/50 m",
    "disciplines": [
-    "c50",
-    "p2550"
+    "p2550",
+    "c50"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-06-19",
@@ -1862,7 +1863,7 @@
    "fin": "2027-06-27",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France arbalète match 30 m",
+   "titre": "Championnat de France Tir Arbalète Match 30 m",
    "lieu": "Strasbourg",
    "disciplines": [
     "arb"
@@ -1878,7 +1879,7 @@
    "fin": "2027-06-27",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France TAR (armes réglementaires)",
+   "titre": "Championnat de France Tir aux Armes Réglementaires",
    "lieu": "Vitrolles",
    "disciplines": [
     "tar"
@@ -1912,13 +1913,13 @@
    "disciplines": [
     "silh"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-07-11",
@@ -1928,13 +1929,13 @@
    "disciplines": [
     "c300"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-07-18",
@@ -1944,20 +1945,20 @@
    "disciplines": [
     "plateau"
    ],
-   "type": "date-limite",
-   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés.",
    "categories": [
     "cadet",
     "junior",
     "senior"
-   ]
+   ],
+   "type": "date-limite",
+   "note": "Fin de la période des championnats régionaux : les classements nationaux établis sur les scores régionaux seront bientôt publiés."
   },
   {
    "debut": "2027-07-21",
    "fin": "2027-07-28",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France 25 m / 50 m et Coupe de France des clubs 25 m / 50 m",
+   "titre": "Championnat de France 25 m - 50 m et CdFC 25 m - 50 m",
    "lieu": "Moulins",
    "disciplines": [
     "p2550",
@@ -1974,7 +1975,7 @@
    "fin": "2027-08-07",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France silhouettes métalliques",
+   "titre": "Championnat de France Silhouettes Métalliques",
    "lieu": "Volmerange",
    "disciplines": [
     "silh"
@@ -1990,7 +1991,7 @@
    "fin": "2027-09-12",
    "niveau": "france",
    "famille": "championnat",
-   "titre": "Championnat de France fosse olympique",
+   "titre": "Championnat de France Fosses Olympiques",
    "lieu": "Châteauroux",
    "disciplines": [
     "plateau"
@@ -2022,16 +2023,17 @@
    "fin": "2027-09-26",
    "niveau": "match",
    "famille": "championnat",
-   "titre": "Match armes anciennes des ligues Lorraine, Nord-Pas-de-Calais et Picardie",
+   "titre": "Match AA ligues Lorraine - NPdC - Picardie",
+   "lieu": "Jeumont",
    "disciplines": [
     "aa"
    ],
-   "dateAPreciser": true,
    "categories": [
     "cadet",
     "junior",
     "senior"
    ]
   }
- ]
+ ],
+ "pdf": "https://www.liguedetirnpdc.fr/wp-content/uploads/2026-2027-CALENDRIER-GS-NPDC-V5-2.pdf"
 }
